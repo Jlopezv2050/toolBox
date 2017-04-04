@@ -2,6 +2,11 @@ package javaCore;
 
 /**
  * Created by juan on 21/11/16.
+ *
+ * Local variable --> defined inside methods, destroyed when method is finished.
+ * Instance variable --> within a class but outside any method. Initialized when the class is instantiated.
+ * Class variable --> instance variable with static keyword
+ *
  * Access control Modifiers --> private, public, protected
  * Non-Access Modifiers --> static, final, abstract, synchronized
  *
@@ -13,6 +18,7 @@ package javaCore;
  *    float :  32-bits.
  *    double : 64-bits.
  *    char : 16-bits. Unicode.  '\u0000' / '\uffff' ( 0 a 65535 )
+ *
  */
 public class _2_Variables {
 

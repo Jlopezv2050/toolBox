@@ -2,6 +2,9 @@ package javaCore;
 
 /**
  * Created by juan on 21/11/16.
+ * Once a class is instanced we call Object (have state and behaviour).
+ * There can be only one public class per source file and multiple non-public classes.
+ * The public class name should be the name of the source file.
  */
 public class _1_Classes {
     

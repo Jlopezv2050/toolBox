@@ -22,48 +22,26 @@ package javaCore;
  */
 public class _2_Variables {
 
-    //default values
-    long   longVariable   = 0L;
-    int    intVariable    = 0;
-    double doubleVariable = 0.0d;
-    float  floatVariable  = 0.0f;
+    //instance variables
+    //slot for each variable  when an object is allocated in the heap
+    //recomended to make private
+    //have default values (it'd be necessary to inform)
+    private long   longVariable   = 0L;
+    private int    intVariable    = 0;
+    private double doubleVariable = 0.0d;
+    private float  floatVariable  = 0.0f;
+    private boolean booleanVariable = false;
 
-    //field by class not one by instance
+    //class/static variables
+    //field by class not one by instance (class variable) but one of each class
     static int daily_currency_Value = 13;
 
+    //static variable
+    //stored in the static memory
+    //values can be assigned during the declaration or within the constructor
     //non-modifiable constant
+    //constants in upper case
     public final static double GRAVITATIONAL_ACCELERATION = 9.80665d;
-
-
-    {
-        System.out.println("non-static");
-        PrimitivesStuff primitivesStuff = new PrimitivesStuff();
-        primitivesStuff.workPrims(longVariable, intVariable, doubleVariable, floatVariable);
-    }
-
-    static {
-        System.out.println("static");
-        //printMinPrimitivesValue();
-    }
-
-    {
-        System.out.println("non-static");
-        //PrimitivesStuff primitivesStuff = new PrimitivesStuff();
-        //primitivesStuff.workPrims(longVariable, intVariable, doubleVariable, floatVariable);
-    }
-
-
-    //only visible in _1_Variables class
-    private class PrimitivesStuff{
-
-        private void workPrims (long a, int b, double c, float d){
-
-            System.out.println(a);
-            System.out.println(b);
-            System.out.println(c);
-            System.out.println(d);
-        }
-    }
 
 
     //only visible in src.main.java package and its classes
@@ -85,13 +63,20 @@ public class _2_Variables {
     }
 
     protected  int sumaDosPrimitivas (int a, int b){
-        int suma = 0;
+        //local variable
+        //are created when the method is entered
+        //can not use access-modifiers
+        //there is no default value, should be declared and initialized before the first use
+        int suma;
 
+        //even the variable has not been initialized here it is
         suma = a + b;
         a++;
         b += suma;
 
         return suma;
     }
+
+
 
 }

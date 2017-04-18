@@ -6,8 +6,6 @@ package javaCore;
  */
 public class _5_Wrappers {
 
-
-
     private class ByValue {
 
         int value = 0;

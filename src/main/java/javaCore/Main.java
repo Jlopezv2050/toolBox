@@ -21,6 +21,31 @@ public class Main {
 
     public static void main (String [] args){
 
+        System.out.println("!!!!!!!START UDEMY¡¡¡¡¡¡¡");
+
+        String str1 = null;
+
+        try{
+            if (str1.equals("juan")){
+                System.out.println("error");
+            }
+        }catch(NullPointerException np){
+            System.out.println("ERROR CONTROLADO \n" + np.getClass());
+        }
+        byte byteVariable = 32;
+        short shortVariable = 1000;
+        int intVariable = 214748364;
+        long resultVariable;
+
+        resultVariable = (50000L + 10L*(byteVariable+shortVariable+intVariable));
+
+        System.out.println(resultVariable);
+
+
+
+        System.out.println("!!!!!!!FINISH UDEMY¡¡¡¡¡¡¡");
+
+
         _1_Classes   classes   = new _1_Classes();
         _2_Variables variables = new _2_Variables();
         _3_Arrays    arrays    = new _3_Arrays();

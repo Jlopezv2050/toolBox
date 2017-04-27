@@ -9,6 +9,9 @@ package javaCore;
  * Statement --> variable = literal (any number, text, or other info representing a value)
  * Statement --> variable = expression (a = a++ OR a = b + 1)
  *
+ * A code block in Java is a chunk of code that's surrounded by a matched pair of curly braces: { }
+
+ *
  * Local variable --> defined inside methods, destroyed when method is finished.
  * Instance variable --> within a class but outside any method. Initialized when the class is instantiated.
  * Class variable --> instance variable with static keyword

@@ -37,6 +37,8 @@ public class _1_Classes {
     }
 
     //how to instantaite an inner class
+    //this is not necessary
     Inner_1_Classes aux = this.new Inner_1_Classes();
+
 
 }

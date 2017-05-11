@@ -5,6 +5,12 @@ package javaCore;
  */
 public class _7_Methods_Constructors {
 
+    //way to avoid else
+    private static boolean reduceIfElse (int a){
+        if (a==3) return true;
+        return false;
+    }
+
     int a = 0;
 
     public _7_Methods_Constructors() {

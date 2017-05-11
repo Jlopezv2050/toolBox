@@ -7,7 +7,9 @@ package javaCore;
  * some information in RAM.
  *
  * Statement --> variable = literal (any number, text, or other info representing a value)
- * Statement --> variable = expression (a = a++ OR a = b + 1)
+ * Statement --> variable = expression (a = a++ OR a = b + 1) builds by values, variables, operators and methods call.
+ *     int score = 100;  --> expression score = 100
+ *     if (score > 20) System.out.println("You got high score!"); "You got high score!"
  *
  * A code block in Java is a chunk of code that's surrounded by a matched pair of curly braces: { }
 
@@ -33,12 +35,17 @@ package javaCore;
  */
 public class _2_Variables {
 
-    //static variable
+    //Class and instance variables are automatically initialized to their default values
+
+    //class/static variable
       //stored in the static memory
       //values can be assigned during the declaration or within the constructor
       //non-modifiable constant
       //constants in upper case
+      //field by class not one by instance (class variable) but one of each class
+
     private static final double POUND_PER_KILOGRAM = 0.45_359_237d;
+    static int daily_currency_Value = 13;
 
     //instance variables
       //slot for each variable  when an object is allocated in the heap
@@ -64,16 +71,12 @@ public class _2_Variables {
       //far more precise
     private double doubleVariable = 0.0D; //double precision 0.0000000000000000 (16)
 
-    //class/static variables
-    //field by class not one by instance (class variable) but one of each class
-    static int daily_currency_Value = 13;
-
     //char
+      //only can contain one character
     private char charVariable ='\u2620';
 
     //boolean
     private boolean booleanVariable ;
-
 
     //only visible in src.main.java package and its classes
     protected void printMaxPrimitivesValue (){

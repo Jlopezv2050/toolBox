@@ -6,10 +6,15 @@ package javaCore;
  * Is a name or identifier to associate allocated space of memory where we store
  * some information in RAM.
  *
+ * An statement is a complete unit of execution.
  * Statement --> variable = literal (any number, text, or other info representing a value)
- * Statement --> variable = expression (a = a++ OR a = b + 1) builds by values, variables, operators and methods call.
- *     int score = 100;  --> expression score = 100
- *     if (score > 20) System.out.println("You got high score!"); "You got high score!"
+ * Statements -->
+ *              a. Assigment expression --> int score = 100; (expression score = 100)
+ *              b. Use of ++ or --  --> aValue++;   (expression aValue++ without ;)
+ *              c. Method invocation statement --> System.out.println("You got high score!"); (expression "You got high score!")
+ *              d. object creation statement  Bicycle myBike = new Bicycle();
+ *
+ * Expressions --> a = b + 1
  *
  * A code block in Java is a chunk of code that's surrounded by a matched pair of curly braces: { }
 

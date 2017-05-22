@@ -19,8 +19,8 @@ package javaCore;
  * A code block in Java is a chunk of code that's surrounded by a matched pair of curly braces: { }
 
  *
- * Local variable --> defined inside methods, destroyed when method is finished.
- * Instance variable --> within a class but outside any method. Initialized when the class is instantiated.
+ * Local variable --> defined inside methods, need to be initialized before use it and destroyed when method is finished.
+ * Instance/member variable --> within a class but outside any method. Initialized when the class is instantiated by default.
  * Class variable --> instance variable with static keyword
  *
  * Access control Modifiers --> private, public, protected

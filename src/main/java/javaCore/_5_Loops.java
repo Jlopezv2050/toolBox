@@ -18,6 +18,7 @@ public class _5_Loops {
     }
 
     public static void main (String[] args){
+
         //IF - ELSE
         // fast return
         System.out.println(fastIfElseReturn());
@@ -48,9 +49,30 @@ public class _5_Loops {
                 System.out.println("No string founded..");
         }
 
+        //WHILE
+        //
+
+        int count = 1;
+        while (true){
+            if (count==6){
+                break;
+            }
+            count++;
+        }
+
+        //DO WHILE
+        //it will be execute at least once
+
+        do {
+            count ++;
+        } while (count < 10);
+
+        //FOR
+        // for (init; termination (until it was false); increment)
+        //
+
+        for (int i=10; i>=1; i--){
+            System.out.println(i);
+        }
     }
-
-
-
-
 }

@@ -18,7 +18,6 @@ public class _5_Loops {
     }
 
     public static void main (String[] args){
-
         //IF - ELSE
         // fast return
         System.out.println(fastIfElseReturn());

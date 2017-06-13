@@ -67,6 +67,7 @@ public class _5_Wrappers {
             swapPoint point1Custom = aux.new swapPoint(pnt1);
             swapPoint point2Custom = aux.new swapPoint(pnt2);
             aux.swapWithWrapper(point1Custom, point2Custom);
+
             System.out.println("X: " + point1Custom.firstPoint.x + " Y:" + point1Custom.firstPoint.y);
             System.out.println("X: " + point2Custom.firstPoint.x + " Y: " + point2Custom.firstPoint.y);
 

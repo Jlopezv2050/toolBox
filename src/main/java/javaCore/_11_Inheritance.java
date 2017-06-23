@@ -1,7 +1,27 @@
 package javaCore;
 
 /**
- * Created by juan on 24/11/16.
+ *
  */
-public class _11_Inheritance {
+public class _11_Inheritance extends _1_Classes {
+
+    //specific field that is not contain in the inherited class
+    String inheritanceReason;
+
+    _11_Inheritance(String a, long b, String c, String inheritanceReason) {
+        super(null, 1, null);
+        this.inheritanceReason = inheritanceReason;
+    }
+
+    private void preFunctionAction() {
+        System.out.println("preAction");
+    }
+
+    @Override
+    public void actionToinhiretance() {
+        preFunctionAction();
+        //use super only if is not clear if the method is from the clas or from its parent
+        super.actionToinhiretance();
+    }
+
 }

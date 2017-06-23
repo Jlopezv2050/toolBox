@@ -46,7 +46,7 @@ public class Main {
         System.out.println("!!!!!!!FINISH UDEMY¡¡¡¡¡¡¡");
 
 
-        _1_Classes   classes   = new _1_Classes();
+        _1_Classes   classes   = new _1_Classes("clases",1,"type");
         _2_Variables variables = new _2_Variables();
         _3_Arrays    arrays    = new _3_Arrays();
         _4_Strings   strings   = new _4_Strings();

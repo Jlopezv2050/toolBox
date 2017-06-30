@@ -10,6 +10,7 @@ public class _11_Inheritance extends _1_Classes {
 
     _11_Inheritance(String a, long b, String c, String inheritanceReason) {
         super(null, 1, null);
+        //set the specific fields from the class
         this.inheritanceReason = inheritanceReason;
     }
 

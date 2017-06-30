@@ -1,0 +1,25 @@
+Process - unit of execution that has its own memory space. Ex. JVM runs as a process, your Java main App too.)
+Heap - is a memory space each java app have. If we've two apps the heap isn't shared between them.
+Thread - unit of execution within a process. Every process has at least one thread and can have multiple .
+Thread problem - every one shares the process's memory and files. This can create problems.
+Thread stack - memory thath only thread can access.
+
+"every Java app runs as a single process, and each process can have multiple threads. Every process has a heap, and every thread has a thread stack."
+
+Reasons to use:
+
+1. long-time task paralel to the main flow. (concurency)
+2. an API requires us to provide one.
+
+sometimes we have to provide the code that will run when a method we've called reaches a certain point in its execution. in this instance, we usually
+don't create the thread. We pass in the code that we want to run on the thread.
+
+extend Threads and run() Override
+start() - executable one per instance of thread
+
+extend Threads vs implements Runnable interface
+-----------------------------------------------------------------
+
+you are not specialising the thread's behaviour. You're just giving it something to run.
+That means composition is the philosophically "purer" way to go.
+So the preferred way is implement Runnable.

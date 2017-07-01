@@ -1,5 +1,5 @@
 package brainstorming;
-import org.json.JSONObject;
+//import org.json.JSONObject;
 
 
 /**
@@ -7,9 +7,9 @@ import org.json.JSONObject;
 * */
 public class jSON {
 
-    private String stringToConvert = "";
-    private JSONObject jsonObject;
-
+//    private String stringToConvert = "";
+//    private JSONObject jsonObject;
+//
 
 
 }

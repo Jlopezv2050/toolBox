@@ -75,7 +75,7 @@ public class Threads {
         new Thread() {
             public void run() {
                 try {
-                    //if anotherThread is finished continue
+                    //if anotherThread is finished continue as if join wouldn't exist
                     anotherThread.join();
                     System.out.println(ANSI_CYAN +"another finished");
                 } catch (InterruptedException e) {
@@ -92,16 +92,4 @@ public class Threads {
         //interfering problems
     }
 }
-
-//imaginemos que tenemos dos threads que su run hacen un println de decremento pero sin compartir la clase countdown,
-//también habrían suspensiones, quiere decir esto que es la gestion del so que va suspendiendo o es en sí la función print
-
-//en caso de que haciendolo sin countdown no se interfieran
-//preguntar a bulchaka
-
-
-
-//two ways to notice he has been interrupted
-  //1. catch the interrupted exception
-  //2. https://docs.oracle.com/javase/tutorial/essential/concurrency/interrupt.html
 

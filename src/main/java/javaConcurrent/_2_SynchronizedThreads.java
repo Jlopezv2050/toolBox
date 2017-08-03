@@ -1,13 +1,13 @@
 package javaConcurrent;
 
 /**
- * Java provide how to acces to the variable memory (heap) to
- * maintain the integrity (shyncronization)
+ * Java provide how to access to the variable memory (heap) to
+ * maintain the integrity (synchronization)
  *
  * EXCEPTION -- using string variable (the reason, is string objects
  * are reused within the jvm (jvm use a string pools for allocation of string objects ))
  */
-public class SynchronizedThreads {
+public class _2_SynchronizedThreads {
 
     private int sharedVariable;
 
@@ -21,9 +21,9 @@ public class SynchronizedThreads {
     private synchronized void doCountDown() {
         for (sharedVariable = 10 ; sharedVariable > 0; sharedVariable--){
             if (Thread.currentThread().getName().equals("Thread1")){
-                System.out.println(Threads.ANSI_GREEN + "Thread 1, value: "+ sharedVariable);
+                System.out.println(_1_Threads.ANSI_GREEN + "Thread 1, value: "+ sharedVariable);
             } else if (Thread.currentThread().getName().equals("Thread2")){
-                System.out.println(Threads.ANSI_PURPLE + "Thread 2, value: "+ sharedVariable);
+                System.out.println(_1_Threads.ANSI_PURPLE + "Thread 2, value: "+ sharedVariable);
             }
         }
     }
@@ -37,10 +37,10 @@ public class SynchronizedThreads {
     }
 
     public static void main(String[] args) {
-        SynchronizedThreads synchronizedThreads = new SynchronizedThreads();
+        _2_SynchronizedThreads a2SynchronizedThreads = new _2_SynchronizedThreads();
 
-        Thread thread1 = new Thread(synchronizedThreads.new thread1());
-        Thread thread2 = new Thread(synchronizedThreads.new thread2());
+        Thread thread1 = new Thread(a2SynchronizedThreads.new thread1());
+        Thread thread2 = new Thread(a2SynchronizedThreads.new thread2());
 
         thread1.setName("Thread1");
         thread2.setName("Thread2");

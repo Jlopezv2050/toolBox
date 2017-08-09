@@ -8,17 +8,13 @@ import static javaConcurrent._4_Intrinsic_Lock.EOF;
 
 public class _4_Intrinsic_Lock {
 
-    public static final String ANSI_RED = "\u001B[31m";
-    public static final String ANSI_PURPLE = "\u001B[35m";
-    public static final String ANSI_CYAN = "\u001B[36m";
-
     public static final String EOF = "EOF";
 
     public static void main(String[] args) {
         List<String> buffer = new ArrayList<String>();
-        MyProducer producer = new MyProducer(buffer, ANSI_RED);
-        MyConsumer consumer1 = new MyConsumer(buffer,ANSI_PURPLE);
-        MyConsumer consumer2 = new MyConsumer(buffer, ANSI_CYAN);
+        MyProducer producer = new MyProducer(buffer, ThreadColors.ANSI_RED);
+        MyConsumer consumer1 = new MyConsumer(buffer, ThreadColors.ANSI_PURPLE);
+        MyConsumer consumer2 = new MyConsumer(buffer, ThreadColors.ANSI_CYAN);
 
         new Thread(producer).start();
         new Thread(consumer1).start();

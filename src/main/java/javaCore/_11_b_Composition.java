@@ -1,6 +1,7 @@
 package javaCore;
 
 /**
+ * "has-a" relationship
  * As a general rule, use Composition instead of Inheritance to give more flexibility
  * -----line----</>
  */

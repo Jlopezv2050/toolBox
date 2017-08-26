@@ -1,7 +1,7 @@
 package javaCore;
 
 /**
- *
+ * "is-a" relationship
  */
 public class _11_Inheritance extends _1_Classes {
 

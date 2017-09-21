@@ -72,9 +72,9 @@ public class _9_Deadlock {
         }
 
         /**
-         * the transaction from 1 to 2 enters and block 1.
-         * the transaction from 2 to 1 enters and block 2.
-         * 1 wait 2 while 2 is waiting 1.
+         * the transaction from bankAccount_1 to bankAccount_2 enters and block bankAccount_1.
+         * the transaction from bankAccount_2 to bankAccount_1 enters and block bankAccount_2.
+         * bankAccount_1 wait bankAccount_2 while bankAccount_2 is waiting bankAccount_1.
         * */
         public static void transfer(BankAccount from, BankAccount to, double amount) {
             synchronized (from) {
@@ -89,7 +89,7 @@ public class _9_Deadlock {
         }
 
         /**
-         * SOLUTION
+         * SOLUTION --> we get twice locks. The order is important in deadlock stuff
          * */
         public static void transferWithoutDeadLock(BankAccount from, BankAccount to, double amount) {
             synchronized (from) {

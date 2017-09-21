@@ -8,7 +8,7 @@ import java.util.Random;
  * 3. NotifyAll -> All threads are waiting for this lock release.
  * while instead if in wait -> interrupts and spurious wake ups are possible
  * */
-public class _3_Notify_NotifyAll_DeadLock_wait {
+public class _3_Notify_NotifyAll_wait {
 
     public static void main(String[] args) {
         Message message = new Message();

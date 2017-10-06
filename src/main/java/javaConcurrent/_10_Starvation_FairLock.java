@@ -77,39 +77,44 @@ public class _10_Starvation_FairLock {public static void main(String[] args) {
             this.account = account;
         }
 
-        @Override
-        public void run() {
-            System.out.println(Thread.currentThread().getName() + " Started execution");
-            //this infinite loop has TOO priority
-            while (true) {
-                if(account.getBalance() <= 0) {
-                    System.out.println("mail notification balance < 0");
-                    break;
-                }
-            }
-            System.out.println(Thread.currentThread().getName() + " Account has gone too low, email sent, exiting");
-        }
+        /**
+         * ERROR
+         */
+//        @Override
+//        public void run() {
+//            System.out.println(Thread.currentThread().getName() + " Started execution");
+//            //this infinite loop has TOO priority
+//            while (true) {
+//                if(account.getBalance() <= 0) {
+//                    System.out.println("mail notification balance < 0");
+//                    break;
+//                }
+//            }
+//            System.out.println(Thread.currentThread().getName() + " Account has gone too low, email sent, exiting");
+//        }
 
         /**
          * SOLUTION
          */
-//        ReentrantLock reentrantLock = new ReentrantLock(true);
-//
-//        @Override
-//        public void run() {
-//            System.out.println(Thread.currentThread().getName() + " Started execution");
-//            while(true){
-//                System.out.println("Balance: "+ account.getBalance());
-//                try {
-//                    reentrantLock.lock();
-//                    if (account.getBalance() <= 0) System.out.println("account.getBalance < 0");
-//
-//                } finally {
-//                    reentrantLock.unlock();
-//                }
-//            }
-//
-//        }
+        ReentrantLock reentrantLock = new ReentrantLock(true);
+
+        @Override
+        public void run() {
+            System.out.println(Thread.currentThread().getName() + " Started execution");
+            while(true){
+                System.out.println("Balance: "+ account.getBalance());
+                try {
+                    reentrantLock.lock();
+                    if (account.getBalance() <= 0) System.out.println("account.getBalance < 0");
+
+
+
+                } finally {
+                    reentrantLock.unlock();
+                }
+            }
+
+        }
 
     }
 

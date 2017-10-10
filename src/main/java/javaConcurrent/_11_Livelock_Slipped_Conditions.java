@@ -38,6 +38,8 @@ public class _11_Livelock_Slipped_Conditions {
          *           first account try to do the transfer to the second but it's locked
          *           second account try to do the transfer to the first but it's locked
          *
+         *           IMPORTANT !! --> it's always the same lock in each account because lock has not been released and
+         *                            for the REENTRANCE
          * */
         public void run() {
             while (!from.tryTransfer(to, amount)) {

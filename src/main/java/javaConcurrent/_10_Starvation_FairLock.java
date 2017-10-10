@@ -94,7 +94,7 @@ public class _10_Starvation_FairLock {public static void main(String[] args) {
 //        }
 
         /**
-         * SOLUTION
+         * SOLUTION get lock and release
          */
         ReentrantLock reentrantLock = new ReentrantLock(true);
 
@@ -106,9 +106,6 @@ public class _10_Starvation_FairLock {public static void main(String[] args) {
                 try {
                     reentrantLock.lock();
                     if (account.getBalance() <= 0) System.out.println("account.getBalance < 0");
-
-
-
                 } finally {
                     reentrantLock.unlock();
                 }

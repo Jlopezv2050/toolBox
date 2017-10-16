@@ -1,25 +1,51 @@
-Process - unit of execution that has its own memory space. Ex. JVM runs as a process, your Java main App too.)
-Heap - is a memory space each java app have. If we've two apps the heap isn't shared between them.
-Thread - unit of execution within a process. Every process has at least one thread and can have multiple .
-Thread problem - every one shares the process's memory and files. This can create problems.
-Thread stack - memory thath only thread can access.
+#CONCEPTS
+---------------------------------------------------------------
+    Process - unit of execution that has its own memory space. Ex. JVM runs as a process, your Java main App too.)
+    Heap - is a memory space each java app have. If we've two apps the heap isn't shared between them.
+    Thread - unit of execution within a process. Every process has at least one thread and can have multiple .
+    Thread problem - every one shares the process's memory and files. This can create problems.
+    Thread stack - memory thath only thread can access.
 
-"every Java app runs as a single process, and each process can have multiple threads. Every process has a heap, and every thread has a thread stack."
+    "every Java app runs as a single process, and each process can have multiple threads. Every process has a heap,
+    and every thread has a thread stack."
 
-Reasons to use:
+    Reasons to use:
+    ---------------------------
 
-1. long-time task paralel to the main flow. (concurency)
-2. an API requires us to provide one.
+    1. long-time task paralel to the main flow. (concurency)
+    2. an API requires us to provide one.
 
-sometimes we have to provide the code that will run when a method we've called reaches a certain point in its execution. in this instance, we usually
-don't create the thread. We pass in the code that we want to run on the thread.
+    sometimes we have to provide the code that will run when a method we've called reaches a certain point
+    in its execution. in this instance, we usually
+    don't create the thread. We pass in the code that we want to run on the thread.
 
-extend Threads and run() Override
-start() - executable one per instance of thread
+    extend Threads and run() Override
+    start() - executable one per instance of thread
 
-extend Threads vs implements Runnable interface
+#extend Threads vs implements Runnable interface
 -----------------------------------------------------------------
 
 you are not specialising the thread's behaviour. You're just giving it something to run.
 That means composition is the philosophically "purer" way to go.
 So the preferred way is implement Runnable.
+
+#SLIPPED CONDITIONS (A.K.A race condition or thread interference)
+-----------------------------------------------------------------
+    occurs betwen thread read a condition and act
+    ex. Buffer read by 2 threads
+        1. Th.1 check status (is ok) 2.Th1 is suspended 3. Th2 check status (is ok)
+        4. Th.2 reach EOF 5. Th.1 is slipped but has an obsolete ok status that becomes into CRASH.
+
+        SOLUTION --> synchronized blocks or lock critical block
+
+#ATOMIC ACTIONS
+------------------------------------------------------------------
+    System.out.println ("argument")    1. Evaluate argument 2. Print it (thread can be suspended between 1 and 2)
+
+    Atomic examples
+    -----------------------------
+        1. Assign myObject1 = myObject2
+        2. R/W primitives (except long / double)
+        3. R/W volatile
+
+

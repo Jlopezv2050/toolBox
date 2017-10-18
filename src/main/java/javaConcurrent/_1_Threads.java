@@ -37,7 +37,18 @@ public class _1_Threads {
          *
          * 1. You're not specialising the thread's behaviour. You're just giving it something to run.
          * 2. That means composition is the philosophically "purer" way to go.
-         * 3. You can implement Runnable and extend from another class as well.
+         * 3. You can implement Runnable and be able to extend from another class as well.
+          *
+          *       public class MyThread extends Thread {
+          *            public MyThread() {
+          *                super("MyThread");
+          *            }
+          *            public void run() {
+          *               //Code
+          *            }
+          *       }
+          *       //Started with a "new MyThread().start()" call
+          *
          */
 
         //Thread instance executing runnable class

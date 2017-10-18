@@ -1,4 +1,4 @@
-package brainstorming;
+package misc;
 
 /**
  * Created by juan on 29/06/17.

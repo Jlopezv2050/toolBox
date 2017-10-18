@@ -17,6 +17,10 @@ import static javaConcurrent._8_ExecutorServices.EOF;
  * Future --> we want to receive a value back from a thread --> we submit method.
  *
  * ArrayBlockingQueue --> thread safe FIFO
+ *
+ * http://winterbe.com/posts/2015/04/07/java8-concurrency-tutorial-thread-executor-examples/
+ * https://looksok.wordpress.com/2015/12/19/asynchronous-producer-consumer-with-blockingqueue-in-java/
+ *
  * */
 public class _8_ExecutorServices {
 

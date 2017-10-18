@@ -1,4 +1,4 @@
-package brainstorming;
+package misc;
 
 import java.util.*;
 

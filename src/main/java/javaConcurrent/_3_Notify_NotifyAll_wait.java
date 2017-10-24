@@ -7,6 +7,10 @@ import java.util.Random;
  * 2. Wait ->  Causes the current thread to wait until another thread invokes the {@link java.lang.Object#notify()}.
  * 3. NotifyAll -> All threads are waiting for this lock release.
  * while instead if in wait -> interrupts and spurious wake ups are possible
+ *
+ * DIFFERENCE BETWEEN SLEEP AND WAIT
+ *    Wait can be "woken up" by another thread calling notify on the monitor which is being waited on whereas a sleep cannot.
+ *    Wait (and notify) must happen in a block synchronized on the monitor object whereas sleep does not.
  * */
 public class _3_Notify_NotifyAll_wait {
 

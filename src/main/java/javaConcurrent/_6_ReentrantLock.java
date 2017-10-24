@@ -23,7 +23,7 @@ import java.util.concurrent.locks.ReentrantLock;
  *
  * Synchronize code DRAWBACKS
  *---------------------------------------------------------------------------------------------
- * 1. Threads can be suspended while executing a single line:
+ * 1. Threads can be suspended/blocked while executing a single line:
  *    double a = 2.0; long b = 2L;
  *    ATOMIC obj1.equals(obj2) and read/write primitive except long/double
  *

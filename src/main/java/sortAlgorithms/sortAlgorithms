@@ -1,0 +1,12 @@
+Bubble sort
+Selection Sort
+Insertion Sort
+Shell Sort
+Quick Sort
+Merge Sort
+Heap Sort
+Bucket Sort???
+
+
+The question is which is prefereable, sortAlgorithms or Collections.sort() depending on
+number of elements and algorithm order.

@@ -33,14 +33,14 @@ So the preferred way is implement Runnable.
 -----------------------------------------------------------------
     occurs betwen thread read a condition and act
     ex. Buffer read by 2 threads
-        1. Th.1 check status (is ok) 2.Th1 is suspended 3. Th2 check status (is ok)
+        1. Th.1 check status (is ok) 2.Th1 is suspended/blocked 3. Th2 check status (is ok)
         4. Th.2 reach EOF 5. Th.1 is slipped but has an obsolete ok status that becomes into CRASH.
 
         SOLUTION --> synchronized blocks or lock critical block
 
 #ATOMIC ACTIONS
 ------------------------------------------------------------------
-    System.out.println ("argument")    1. Evaluate argument 2. Print it (thread can be suspended between 1 and 2)
+    System.out.println ("argument")    1. Evaluate argument 2. Print it (thread can be suspended/blocked between 1 and 2)
 
     Atomic examples
     -----------------------------

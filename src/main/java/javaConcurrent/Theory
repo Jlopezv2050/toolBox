@@ -48,4 +48,18 @@ So the preferred way is implement Runnable.
         2. R/W primitives (except long / double)
         3. R/W volatile
 
+#VOLATILE
+-------------------------------------------------------------------
+    Each thread has a CPU cache that contains copies of values that are in main memory.
+    VOLATILE!! write before in main memory and then update the cache.
+    A common use is long/double *
 
+    * memory consistency errors can happen (ex. thread is suspended and when is slipped is not updated respect the main mem.)
+
+#JAVA.UTIL.CONCURRENT.ATOMIC
+-------------------------------------------------------------------
+
+    support lock-free threadsafe on single variables
+    boolean, integer, integer array, long, long array, object reference
+
+    ex. incrementAndGet() (we don't have to synchronize to be used in inc() dec() values

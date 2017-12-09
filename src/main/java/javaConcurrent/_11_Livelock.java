@@ -38,8 +38,7 @@ public class _11_Livelock {
          *           first account try to do the transfer to the second but it's locked
          *           second account try to do the transfer to the first but it's locked
          *
-         *           IMPORTANT !! --> it's always the same lock in each account because lock has not been released and
-         *                            for the REENTRANCE
+         *          LOCK 1 IS UNRELEASED, A REFUND IS DONE AND BACK TO THE INITIAL SITUATION
          * */
         public void run() {
             while (!from.tryTransfer(to, amount)) {
@@ -48,21 +47,6 @@ public class _11_Livelock {
             }
             System.out.printf(Thread.currentThread().getName() + " Finalizada");
         }
-
-
-        /**
-         * SOLUTION --> 1. synchronize at the same time th withdraw and deposit action
-         *              2. remove this.lock tryLock() because are not unlocked
-         *
-         * */
-//        public synchronized boolean transfer(BankAccount receiverBankAccount, double amountToTransfer){
-//            //1. withdraw
-//            //2. deposit
-//            withdraw(amountToTransfer);
-//            receiverBankAccount.deposit(amountToTransfer);
-//            return true;
-//        }
-
     }
 
     private static final class BankAccount {
@@ -75,17 +59,24 @@ public class _11_Livelock {
             this.balance = balance;
         }
 
+        /**SOLUTION TRY/FINALLY*/
         public boolean withdraw(double amount) {
-            if (this.lock.tryLock()) {
-                // Simulamos algo de IO como por ejemplo acceso a una DB
-                try {
-                    TimeUnit.MILLISECONDS.sleep(500);
-                } catch (InterruptedException e) {
-                    // Log and Handle exception
-                    e.printStackTrace();
+            if (lock.tryLock()) {
+                try{
+                    // Simulamos algo de IO como por ejemplo acceso a una DB
+                    try {
+                        TimeUnit.MILLISECONDS.sleep(500);
+                    } catch (InterruptedException e) {
+                        // Log and Handle exception
+                        e.printStackTrace();
+                    }
+                    balance -= amount;
+                    return true;
+
+                }finally{
+                    lock.unlock();
                 }
-                balance -= amount;
-                return true;
+
             }
             return false;
         }

@@ -62,4 +62,4 @@ So the preferred way is implement Runnable.
     support lock-free threadsafe on single variables
     boolean, integer, integer array, long, long array, object reference
 
-    ex. incrementAndGet() (we don't have to synchronize to be used in inc() dec() values
+    ex. incrementAndGet() we don't have to synchronize to be used in inc() dec() values

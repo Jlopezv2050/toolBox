@@ -1,11 +1,9 @@
-package javaConcurrent;
-
+package javaConcurrent.challenges;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-
-public class Thread_Challenge2{
+public class Thread_Challenge2 {
 
     public static void main(String[] args) {
         Thread_Challenge2 thread_challenge2 = new Thread_Challenge2();
@@ -31,8 +29,7 @@ public class Thread_Challenge2{
                 try {
                     // Simulate database access
                     Thread.sleep(1);
-                }
-                catch (InterruptedException e) {
+                } catch (InterruptedException e) {
                 }
                 balance -= amount;
                 System.out.printf("%s: Withdrew %f\n", Thread.currentThread().getName(), amount);
@@ -48,8 +45,7 @@ public class Thread_Challenge2{
                 try {
                     // Simulate database access
                     Thread.sleep(1);
-                }
-                catch (InterruptedException e) {
+                } catch (InterruptedException e) {
                 }
                 balance += amount;
                 System.out.printf("%s: Deposited %f\n", Thread.currentThread().getName(), amount);
@@ -64,8 +60,7 @@ public class Thread_Challenge2{
             if (withdraw(amount)) {
                 if (destinationAccount.deposit(amount)) {
                     return true;
-                }
-                else {
+                } else {
                     // The deposit failed. Refund the money back into the account.
                     System.out.printf("%s: Destination account busy. Refunding money\n",
                             Thread.currentThread().getName());
@@ -94,3 +89,10 @@ public class Thread_Challenge2{
         }
     }
 }
+
+/**ERROR
+ * Live-lock because tryLock is not unlock and the transfer is doing a refund (trying again because the run in Transfer class)
+ *
+ * SOLUTION
+ * 1. tryLock with if
+ * 2. try finally in order to close */

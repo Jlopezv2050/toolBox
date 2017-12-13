@@ -4,7 +4,7 @@
     Heap - is a memory space each java app have. If we've two apps the heap isn't shared between them.
     Thread - unit of execution within a process. Every process has at least one thread and can have multiple .
     Thread problem - every one shares the process's memory and files. This can create problems.
-    Thread stack - memory thath only thread can access.
+    Thread stack - memory that only thread can access.
 
     "every Java app runs as a single process, and each process can have multiple threads. Every process has a heap,
     and every thread has a thread stack."
@@ -12,7 +12,7 @@
     Reasons to use:
     ---------------------------
 
-    1. long-time task paralel to the main flow. (concurency)
+    1. long-time task parallel to the main flow. (concurrency)
     2. an API requires us to provide one.
 
     sometimes we have to provide the code that will run when a method we've called reaches a certain point
@@ -29,9 +29,27 @@ you are not specialising the thread's behaviour. You're just giving it something
 That means composition is the philosophically "purer" way to go.
 So the preferred way is implement Runnable.
 
+WAYS TO DECLARE THREAD
+-----------------------------------------------------------------
+
+1. Thread th = new Thread (){@Override public void run()}
+2. Thread th = new Thread (new Runnable()){}
+3. Thread th = new Thread(() -> {});
+
+
+
+synchronize lock all class while ReentrantLock a piece of code that if a second piece with the block try to acquire CAN't.
+
+public synchronize method(){} ==  synchronize(buffer) synchronize only the critical section or at least the minimal as possible.
+
+TRYLOCK
+-------------------------------------------------------------------
+TryLock(1, TimeUnit.milliseconds) inside if and try catching an IOException and using try finally to unlock()
+
+
 #SLIPPED CONDITIONS (A.K.A race condition or thread interference)
 -----------------------------------------------------------------
-    occurs betwen thread read a condition and act
+    occurs between thread read a condition and act
     ex. Buffer read by 2 threads
         1. Th.1 check status (is ok) 2.Th1 is suspended/blocked 3. Th2 check status (is ok)
         4. Th.2 reach EOF 5. Th.1 is slipped but has an obsolete ok status that becomes into CRASH.
@@ -59,7 +77,15 @@ So the preferred way is implement Runnable.
 #JAVA.UTIL.CONCURRENT.ATOMIC
 -------------------------------------------------------------------
 
-    support lock-free threadsafe on single variables
+    support lock-free thread-safe on single variables
     boolean, integer, integer array, long, long array, object reference
 
     ex. incrementAndGet() we don't have to synchronize to be used in inc() dec() values
+
+LIVELOCK
+-------------------------------------------------------------------
+We can reach if one thread tryLock without unlock another needed resource and we refund inside a while
+
+DEADLOCK
+-------------------------------------------------------------------
+Because of the block contains a wait() is blocking the execution of notifyAll()

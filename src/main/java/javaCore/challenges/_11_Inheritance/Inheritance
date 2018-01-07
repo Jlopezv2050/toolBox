@@ -1,8 +1,0 @@
-CHALLENGE 1 - INHERITANCE
--------------------------------------------------------------------------
-
-Create a base class of a Person, then create a Patient class that inherits from this base class.
-
-Finally, create another class, a specific type of urgencyPatient that inherits from the Car class.
-
-

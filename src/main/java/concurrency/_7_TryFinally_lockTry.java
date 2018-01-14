@@ -1,4 +1,4 @@
-package javaConcurrent;
+package concurrency;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +15,7 @@ import java.util.concurrent.locks.ReentrantLock;
  *    2. trylock(time)
  *    3. Fairness parameter -- turning into FIFO thread behaviour
  */
-import static javaConcurrent._7_TryFinally_lockTry.EOF;
+import static concurrency._7_TryFinally_lockTry.EOF;
 
 public class _7_TryFinally_lockTry {
     public static final String EOF = "EOF";

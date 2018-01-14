@@ -9,7 +9,7 @@ targetCompatibility = 1.8
 task run(type: JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
 
-    main = 'javaCore.Main'
+    main = 'core.Main'
 
     args 'appArg1'
 }
@@ -17,7 +17,7 @@ task run(type: JavaExec) {
 task runArgs(type: JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
 
-    main = 'javaCore._7_Methods_Constructors'
+    main = 'core._7_Methods_Constructors'
 
     args 'appArg1'
 }

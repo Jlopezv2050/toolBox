@@ -1,4 +1,4 @@
-package javaConcurrent;
+package concurrency;
 
 
 public class ThreadColors {

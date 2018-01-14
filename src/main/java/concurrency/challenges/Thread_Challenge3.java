@@ -1,4 +1,4 @@
-package javaConcurrent.challenges;
+package concurrency.challenges;
 
 /**
  * FIND THE ERROR*/

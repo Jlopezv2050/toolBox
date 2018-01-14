@@ -1,4 +1,4 @@
-package javaConcurrent;
+package concurrency;
 
 /**
  * Java provide how to access to the variable memory (heap) to

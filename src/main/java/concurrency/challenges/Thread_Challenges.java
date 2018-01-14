@@ -1,4 +1,4 @@
-package javaConcurrent.challenges;
+package concurrency.challenges;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;

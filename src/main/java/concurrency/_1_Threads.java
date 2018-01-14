@@ -1,4 +1,4 @@
-package javaConcurrent;
+package concurrency;
 
 /**
  * Threads are really operating system dependent.

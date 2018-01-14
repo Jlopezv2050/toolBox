@@ -1,10 +1,10 @@
-package javaConcurrent;
+package concurrency;
 
 
 import java.util.Random;
 import java.util.concurrent.*;
 
-import static javaConcurrent._8_ExecutorServices.EOF;
+import static concurrency._8_ExecutorServices.EOF;
 
 /**
  * We create an implementation of EXECUTIVE SERVICE (java.util.concurrent.executors) and give it a runnable task

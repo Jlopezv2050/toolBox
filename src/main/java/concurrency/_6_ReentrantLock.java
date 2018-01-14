@@ -1,4 +1,4 @@
-package javaConcurrent;
+package concurrency;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,7 +42,7 @@ import java.util.concurrent.locks.ReentrantLock;
 //https://stackoverflow.com/questions/18356795/static-versus-non-static-lock-object-in-synchronized-block
 
 
-import static javaConcurrent._6_ReentrantLock.EOF;
+import static concurrency._6_ReentrantLock.EOF;
 
 public class _6_ReentrantLock {
     public static final String EOF = "EOF";

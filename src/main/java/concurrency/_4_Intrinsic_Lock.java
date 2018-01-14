@@ -1,10 +1,10 @@
-package javaConcurrent;
+package concurrency;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import static javaConcurrent._4_Intrinsic_Lock.EOF;
+import static concurrency._4_Intrinsic_Lock.EOF;
 
 public class _4_Intrinsic_Lock {
 

@@ -1,4 +1,4 @@
-package cores;
+package basis;
 
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ class InstanceClassFromString {
         public void addExtraItem(InstanceClassFromString instanceClassFromString, String item) throws Exception {
             if (numberExtraItems >= 4) throw new Exception("You can't add more than 4 extra items.");
 
-            Class<?> clazz = Class.forName("cores.InstanceClassFromString$"+item);
+            Class<?> clazz = Class.forName("basis.InstanceClassFromString$"+item);
             Constructor<?> ctor = clazz.getConstructor(InstanceClassFromString.class, String.class);
             ExtraItem object = (ExtraItem) ctor.newInstance(instanceClassFromString, item);
 

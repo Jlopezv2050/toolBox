@@ -46,7 +46,7 @@ public class Main {
         _2_Variables variables = new _2_Variables();
         _3_Arrays    arrays    = new _3_Arrays();
         _4_Strings   strings   = new _4_Strings();
-        _5_Wrappers  wrappers  = new _5_Wrappers();
+        //_5_Wrappers_Auto_Un_boxing wrappers  = new _5_Wrappers_Auto_Un_boxing();
         _6_Date_Time date_time = new _6_Date_Time();
         _10_Files    files     = new _10_Files();
 

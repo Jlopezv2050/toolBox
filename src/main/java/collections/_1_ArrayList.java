@@ -4,6 +4,25 @@ import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
 
+/**
+ * Array of primitives
+ * ________________
+ * |0 | 100 | 1   |
+ * |1 | 104 | 224 |
+ * ----------------
+ * Index / Contiguous formula (base address (100) + 4 bytes * index) / Value
+ *
+ * ArrayList of objects
+ * ________________
+ * |0 | 100 | 1   |
+ * |1 | 104 | 224 |
+ * ----------------
+ * Index/ Address / Memory* address of the object content.
+ * ArrayList elements are not stored at contiguous memory locations.
+ *
+ * *We talk about the virtual memory (physical memory is not contiguous).
+ *
+ */
 public class _1_ArrayList {
 
     class MobilePhone {

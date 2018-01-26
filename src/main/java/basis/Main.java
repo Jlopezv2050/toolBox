@@ -53,9 +53,9 @@ public class Main {
 
         /********************************************CLASSES***********************************************************/
 
-        _1_Classes.Inner_1_Classes clas = classes.new Inner_1_Classes();
-        System.out.println(clas.isGreatherThanZero(19));
-        System.out.println("asdfa");
+//        _1_Classes.Inner_1_Classes clas = classes.new Inner_1_Classes();
+//        System.out.println(clas.isGreatherThanZero(19));
+//        System.out.println("asdfa");
 
 
         /**************************************************************************************************************/

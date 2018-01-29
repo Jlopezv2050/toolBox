@@ -97,17 +97,21 @@ public class _1b_InnerClasses {
         loro.fly();
 
         /*1C3*/
-        Manager manager = new Manager();
-        manager.canManage(new Manager() {
-            public void manage() {
-                System.out.println("Yes, it is being anonymously managed!");
+        Manager manager = innerClasses.new Manager();
+        manager.canManage(new Ivolador() {
+            @Override
+            public void fly() {
+                System.out.println("Can manage will fly like this!");
+            }
+
+            @Override
+            public void cry() {
+                System.out.println("Can manage will cry like this!");
             }
         });
-        http://cs-fundamentals.com/java-programming/java-anonymous-inner-classes.php
 
         /*2*/
         _1b_InnerClasses.PrivateStaticInnerClass privateStaticInnerClass = new _1b_InnerClasses.PrivateStaticInnerClass();
         privateStaticInnerClass.printNumer();
     }
 }
-

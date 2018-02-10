@@ -18,7 +18,7 @@ public class _1b_InnerClasses {
     private class PrivateInnerClass{
         private int numer = 3;
 
-        void printNumer(){
+        void printNumber(){
             System.out.println(this.numer);
         }
     }
@@ -53,7 +53,7 @@ public class _1b_InnerClasses {
     private static class PrivateStaticInnerClass{
         private int numer = 3;
 
-        void printNumer(){
+        void printNumber(){
             System.out.println(this.numer);
         }
     }
@@ -65,22 +65,22 @@ public class _1b_InnerClasses {
         PrivateInnerClass privateInnerClass = innerClasses.new PrivateInnerClass(){
 
             //How to avoid this behaviour? declaring the number final
-            void printNumer(){
+            void printNumber(){
                 System.out.println("hacked!");
             }
         };
-        privateInnerClass.printNumer();
+        privateInnerClass.printNumber();
 
         /*1B*/
         innerClasses.innerMethod();
 
         /*1C1*/
-        PrivateInnerClass anonymousInnerclasses = innerClasses.new PrivateInnerClass(){
-            void printNumer(){
+        PrivateInnerClass anonymousInnerClasses = innerClasses.new PrivateInnerClass(){
+            void printNumber(){
                 System.out.println("anonymousInnerClasses!");
             }
         };
-        anonymousInnerclasses.printNumer();
+        anonymousInnerClasses.printNumber();
 
         /*1C2*/
         Ivolador loro = new Ivolador() {
@@ -112,6 +112,6 @@ public class _1b_InnerClasses {
 
         /*2*/
         _1b_InnerClasses.PrivateStaticInnerClass privateStaticInnerClass = new _1b_InnerClasses.PrivateStaticInnerClass();
-        privateStaticInnerClass.printNumer();
+        privateStaticInnerClass.printNumber();
     }
 }

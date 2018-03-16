@@ -9,6 +9,7 @@ public class _5_Loops {
     static char switchVariable = '%';
     static String stringVariable = "Connection";
 
+    //way to avoid else
     private static int fastIfElseReturn (){
 
         if (ifElseVariable != 0){

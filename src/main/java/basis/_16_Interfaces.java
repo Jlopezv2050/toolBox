@@ -5,6 +5,8 @@ import java.util.ArrayList;
 /**
  * When we talk about abstract classes we are defining characteristics of an object type; specifying what an object is.
  * When we talk about an interface and define capabilities that we promise to provide, we are talking about establishing a contract about what the object can do.
+ *
+ * You define what kind of operation an object can perform, a contract with the class. Unrelated classes.
  */
 public class _16_Interfaces {
 

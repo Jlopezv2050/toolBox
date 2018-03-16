@@ -1,15 +1,11 @@
 package basis;
 
 /**
- * Created by juan on 24/11/16.
+ * THIS VS SUPER (first statement, can use params)
+ *    this --> in order to rehuse class constructor
+ *    super --> in order to rehuse parents constructor
  */
 public class _7_Methods_Constructors {
-
-    //way to avoid else
-    private static boolean reduceIfElse (int a){
-        if (a==3) return true;
-        return false;
-    }
 
     int a = 0;
 
@@ -26,10 +22,6 @@ public class _7_Methods_Constructors {
     /**
      * Enables you to pass a variable numbr of arguments of the same type to a method. Only one variable-length parameter
      * may be specified in a method and must be the last. Any regular parameters must precede it.
-     *
-     * @since JDK 1.5
-     * @param numbers description
-     * @see <a href="https://www.tutorialspoint.com/java/java_methods.htm">TutorialsPoint</a>
      */
     protected static void printMax( double... numbers) {
         if (numbers.length == 0) {
@@ -52,3 +44,23 @@ public class _7_Methods_Constructors {
         printMax(arrayDoubles);
     }
 }
+
+class ChainingConstructors extends _7_Methods_Constructors {
+
+    private int c;
+    private int d;
+
+    public ChainingConstructors(int c, int d) {
+        this(0,c,d);
+    }
+    public ChainingConstructors(int a, int c, int d) {
+        super(a);
+        this.c = c;
+        this.d = d;
+    }
+
+}
+
+
+
+

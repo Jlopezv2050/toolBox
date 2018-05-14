@@ -4,6 +4,7 @@ package basis;
  * "is-a" relationship
  * -----line------|>
  */
+
 public class _11_Inheritance extends _1_Classes {
 
     //specific field that is not contain in the inherited class
@@ -20,10 +21,10 @@ public class _11_Inheritance extends _1_Classes {
     }
 
     @Override
-    public void actionToinhiretance() {
+    public void actionToInheritance() {
         preFunctionAction();
         //use super only if is not clear if the method is from the clas or from its parent
-        super.actionToinhiretance();
+        super.actionToInheritance();
     }
 
 }

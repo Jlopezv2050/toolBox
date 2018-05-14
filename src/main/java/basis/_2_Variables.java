@@ -1,7 +1,6 @@
 package basis;
 
 /**
- * Created by juan on 21/11/16.
  *
  * Is a name or identifier to associate allocated space of memory where we store
  * some information in RAM.

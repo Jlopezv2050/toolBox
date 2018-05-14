@@ -1,32 +1,41 @@
 package basis;
 
 /**
- * 1. Non-static Nested Classes:
- *  A. Inner classes
- *  B. Method local Inner classes
- *  C. Anonymous Inner classes
- *      C1. Class type
- *      C2. Interface / abstract implementer
- *      C3. In Method arguments
+ * <h1>Non-static Nested Classes</h1>
+ * <ol>
+ *     <li><b>Non-static Nested Classes</b>
+ *          <ol type="A">
+ *              <li>Inner classes</li>
+ *              <li>Method local Inner classes</li>
+ *              <li>Anonymous Inner classes with Class / Interface / abstract implementer</li>
+ *              <li>Anonymous Inner classes In Method arguments</li>
+ *          </ol>
+ *     </li>
+ * <li><b>Static Nested Classes</b></li>
+ * </ol>
+ * <p>
+ * <b>Note:</b> Anonymous Inner classes (declared without class name).
  *
- * 2. Static Nested classes
-*/
+ * @author  jlopezv
+ * @version 1.0
+ * @since   2016
+ */
 
 public class _1b_InnerClasses {
 
     /*1A. Inner classes*/
-    private class PrivateInnerClass{
-        private int numer = 3;
+    private class PrivateInnerClass {
+        private int number = 3;
 
-        void printNumber(){
-            System.out.println(this.numer);
+        void printNumber() {
+            System.out.println(this.number);
         }
     }
 
     /*1B. Method local Inner classes*/
     void innerMethod() {
         class MethodInner_Demo {
-            void print(){
+            void print() {
                 System.out.println("Printing method inner demo!!!");
             }
         }
@@ -34,38 +43,39 @@ public class _1b_InnerClasses {
         methodInner_demo.print();
     }
 
-    /*1C2*/
-    interface Ivolador{
+    /*1C1*/
+    interface ICanFly {
         void fly();
+
         void cry();
     }
 
-    /*1C3*/
+    /*1C2*/
     class Manager {
-        public void canManage(Ivolador volador)
-        {
-            volador.fly();
-            volador.cry();
+        public void canManage(ICanFly flyObj) {
+            flyObj.fly();
+            flyObj.cry();
         }
     }
 
     /*2 Static inner class*/
-    private static class PrivateStaticInnerClass{
-        private int numer = 3;
+    private static class PrivateStaticInnerClass {
+        private int number = 3;
 
-        void printNumber(){
-            System.out.println(this.numer);
+        void printNumber() {
+            System.out.println(this.number);
         }
     }
 
     public static void main(String[] args) {
 
-        /*1A*/
         _1b_InnerClasses innerClasses = new _1b_InnerClasses();
-        PrivateInnerClass privateInnerClass = innerClasses.new PrivateInnerClass(){
+
+        /*1A*/
+        PrivateInnerClass privateInnerClass = innerClasses.new PrivateInnerClass() {
 
             //How to avoid this behaviour? declaring the number final
-            void printNumber(){
+            void printNumber() {
                 System.out.println("hacked!");
             }
         };
@@ -75,19 +85,12 @@ public class _1b_InnerClasses {
         innerClasses.innerMethod();
 
         /*1C1*/
-        PrivateInnerClass anonymousInnerClasses = innerClasses.new PrivateInnerClass(){
-            void printNumber(){
-                System.out.println("anonymousInnerClasses!");
-            }
-        };
-        anonymousInnerClasses.printNumber();
-
-        /*1C2*/
-        Ivolador loro = new Ivolador() {
+        ICanFly loro = new ICanFly() {
             @Override
             public void fly() {
                 System.out.println("Is flying");
             }
+
             @Override
             public void cry() {
                 System.out.println("Is flying");
@@ -96,9 +99,9 @@ public class _1b_InnerClasses {
         loro.cry();
         loro.fly();
 
-        /*1C3*/
+        /*1C2*/
         Manager manager = innerClasses.new Manager();
-        manager.canManage(new Ivolador() {
+        manager.canManage(new ICanFly() {
             @Override
             public void fly() {
                 System.out.println("Can manage will fly like this!");

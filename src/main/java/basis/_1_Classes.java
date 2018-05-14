@@ -1,9 +1,20 @@
 package basis;
 
 /**
- * Once a class is instanced, is called Object (have state and behaviour).
- * There can be only one public class per source file and multiple non-public classes.
+ * <h1>Classes, Constructors and Objects</h1>
+ * Short description
+ * <p>
+ * <ul>
+ *     <li><b>Class:</b> template with properties, behaviours (methods), external interactions and how an specimen of this is created.</li>
+ *     <li><b>Object:</b> specific instance of the class (have state and behaviour).</li>
+ * </ul>
+ * <p>
+ * <b>Note:</b> There can be only one public class per source file and multiple non-public classes.
  * The public class name should be the name of the source file.
+ *
+ * @author  jlopezv
+ * @version 1.0
+ * @since   2016
  */
 
 public class _1_Classes {
@@ -13,7 +24,7 @@ public class _1_Classes {
     String type;
 
     //CONSTRUCTOR
-    _1_Classes (String name, long id, String type){
+    _1_Classes(String name, long id, String type) {
         this.name = name;
         this.id = id;
         this.type = type;
@@ -33,11 +44,12 @@ public class _1_Classes {
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
 
-    public void actionToinhiretance(){
-        System.out.println("action to inhiretance");
+    public void actionToInheritance() {
+        System.out.println("action to inheritance");
     }
 }

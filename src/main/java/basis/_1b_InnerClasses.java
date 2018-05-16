@@ -15,10 +15,12 @@ package basis;
  * </ol>
  * <p>
  * <b>Note:</b> Anonymous Inner classes (declared without class name).
+ * <b>Note:</b> Inner class can see class variables.
  *
  * @author  jlopezv
  * @version 1.0
  * @since   2016
+ *
  */
 
 public class _1b_InnerClasses {

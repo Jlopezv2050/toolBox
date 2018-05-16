@@ -36,8 +36,16 @@ package basis;
  *
  *    char : 16-bits. Unicode.  '\u0000' / '\uffff' ( 0 a 65535 )
  *    boolean : true /false.
+ *
+ *    A method can have a variable with the same name than a class and win except using keyword this.
+ *
+ *    In general, a set of curly brackets { } defines a scope.
+ *    Scope class, method, loop. Visibility depends on public, private, default, package.
+ *    Visibility refers to if you can use a variable from a given place in the program.
  */
 public class _2_Variables {
+
+    private String sameNameThanMethod;
 
     //Class and instance variables are automatically initialized to their default values
 

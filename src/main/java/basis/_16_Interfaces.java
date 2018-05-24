@@ -7,6 +7,8 @@ import java.util.ArrayList;
  * When we talk about an interface and define capabilities that we promise to provide, we are talking about establishing a contract about what the object can do.
  *
  * You define what kind of operation an object can perform, a contract with the class. Unrelated classes.
+ *
+ * <b>Note: you can't implement an interface in another interface. You can extend</b>
  */
 public class _16_Interfaces {
 

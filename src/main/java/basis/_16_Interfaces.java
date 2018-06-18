@@ -17,6 +17,32 @@ public class _16_Interfaces {
     }
 
     interface ISaveable {
+
+        /**
+         * 1. Help extending interfaces without changing all implementations.
+         * 2. Has bridge down the differences between interfaces and abstract classes.
+         * 3. Avoid utility classes providing the methods in the interfaces itself.
+         * 4. One of the major reason for introducing it is to enhance the lambda expressions in J8 Collections API.
+         * 5. If any class in the hierarchy has a method with same signature, default method become irrelevant.
+         * 6. A default method cannot override a method from java.lang.Object.
+         * 7. Also called Defender/Virtual extension methods.
+         */
+        //DEFAULT
+        default void overrideDefault(){
+            System.out.println("Default method");
+        }
+
+        /**
+         * 1. Is part of iterface, we can't use it for implementation class objects
+         * 2. Good for utility methods (null check, collection sorting,...)
+         * 3. Is secure because implementation class can't override them
+         * 4. Can't define instance method with same signature for Object class methods.
+         */
+        //STATIC
+        static void overrideStatic(){
+            System.out.println("I'm static method from Isaveable");
+        }
+
         void populateObjectsFieldsFromArrayList(ArrayList<Integer> objectsList);
     }
 
@@ -26,6 +52,16 @@ public class _16_Interfaces {
 
         public Players(){
             this.theList = new ArrayList<>();
+        }
+
+        @Override
+        public void overrideDefault(){
+            System.out.println("Default overrided");
+        }
+
+        //we can't override
+        public void overrideStatic(){
+
         }
 
         @Override
@@ -63,6 +99,8 @@ public class _16_Interfaces {
         _16_Interfaces interfaces = new _16_Interfaces();
         Players player = interfaces.new Players();
         Monsters monster = interfaces.new Monsters();
+
+        player.overrideDefault();
 
         ArrayList<Integer> thelis = new ArrayList<>();
         thelis.add(1);

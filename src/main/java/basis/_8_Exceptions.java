@@ -3,18 +3,24 @@ package basis;
 import java.io.FileReader;
 import java.io.IOException;
 
-/**
- * Created by juan on 24/11/16.
- */
 public class _8_Exceptions {
     int a= 1;
-    //checked
-      //compile time
-        //FileNotFoundException
+    //CHECKED (can NOT prevent)
+        //compile time
+        //NO RuntimeException
+        //caught or MUST thrown
 
-    //unchecked
-      //runtime
+        //FileNotFoundException
+        //IOException
+        //SocketException
+
+    //UNCHECKED (CAN prevent)
+        //RuntimeException
+        //caught or MAY thrown
+
         //ArrayIndexOutOfBoundsException
+        //NullPointerException
+        //IlegalArgumentException
 
     //errors
       //stackOverflow

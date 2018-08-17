@@ -1,16 +1,18 @@
 package basis;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
 
 /**
  * "event that disrupts the normal program's flow"
- *
+ * <p>
  * LBYL
  * EAFP
  */
 public class _8_Exceptions {
-    int a= 1;
+    int a = 1;
 
     //                                                |  Throwable
     //                                                |      |
@@ -39,21 +41,27 @@ public class _8_Exceptions {
     //  UNCHECKED (CAN'T PREVENT ( runtime ),         |  CHECKED( CAN prevent (compile time not runtime),
     //  CAUGHT or MAY THROWN                          |  CAUGHT OR MUST THROWN)
 
+    // CHECKED or UNCHECKED means whether it is forced to handle at compile time or it will only be identified at runtime.
 
     // WHY NOT CATCH THROWABLE
     //Throwable covers Error as well and that's usually no point of return. You don't want to catch/handle that,
     //you want your program to die immediately so that you can fix it properly
 
-    protected void testException (){
+    // UNCHECKED are programmatic runtime errors while ERRORS are runtime environment problems not recoverable.
+
+    // THROW EARLY CATCH LATE. Climb the stack trace until the level you reach enough abstraction to handle the problem.
+
+    public static void main(String[] args) {
+        readFile();
+        throwFromFinally();
+        testMultipleException();
+
         try {
-            int[] a = {0,1};
-
-            System.out.println("El valor de la tercera posicion es: " + a[3]);
-
-        } catch(ArithmeticException | IndexOutOfBoundsException e){
-
-            System.out.println("ERROR: " + e);
-
+            avoidLostWrappingExceptions();
+        //Catch specific subclasses and never Throwable  because errors also extend Throwable and must not be handed
+        } catch (_8_b_User_Defined_Exceptions e) {
+            e.printStackTrace();
+            System.out.println("method has failed");
         }
     }
 
@@ -63,44 +71,55 @@ public class _8_Exceptions {
      * you can declare more than one class in statement (close will be in reverse order)
      * is implicitly declared as final and instantiated just before the start of try
      */
-    protected void readFile (){
-        try(FileReader fr = new FileReader("\\tmp\\test.txt")){
-
-            try{
-
-            }catch(Exception e){
-
-            }
-            char [] a = new char[50];
+    private static void readFile() {
+        try (FileReader fr = new FileReader("\\tmp\\test.txt")) {
+            char[] a = new char[50];
             fr.read(a);
-            for(char c : a)
+            for (char c : a)
                 System.out.print(c);
-        }catch(IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    /**
-     * Trow user defined Exceptions
-     */
-    protected void exceptionMethodThrow () throws Exception{
-        try{
-            System.out.println(1/0);
-        } catch (Exception e){
-            throw e;
-        }
-
-    }
-
-    public static void main (String[] args){
-        _8_Exceptions exceptions = new _8_Exceptions();
-        exceptions.testException();
-
+    public static void avoidLostWrappingExceptions() throws _8_b_User_Defined_Exceptions {
+        File file = new File("noExist.txt");
+        FileInputStream fileInputStream;
         try {
-            exceptions.exceptionMethodThrow();
-        } catch (Exception e) {
-            e.printStackTrace();
+            fileInputStream = new FileInputStream(file);
+            System.out.println(fileInputStream.read());
+        //You can wrap the exceptions and throw yours
+        } catch (IOException e) {
+            //Pass the throwable to not lost the stack trace
+            throw new _8_b_User_Defined_Exceptions("user msg", e);
         }
+    }
+
+    private static void testMultipleException() {
+        try {
+            int[] a = {0, 1};
+            System.out.println("The value from the third position is: " + a[3]);
+
+        } catch (ArithmeticException | IndexOutOfBoundsException e) {
+            System.out.println("ERROR: " + e);
+        }
+    }
+
+    //The exception from the first method is lost (NO THROW FROM FINALLY
+    private static void throwFromFinally(){
+       try{
+           throwRuntime();
+       }finally {
+           throwRuntime2();
+       }
+    }
+    //RuntimeException are NOT forced to catch/handle
+    private static void throwRuntime(){
+        throw new RuntimeException("runtimeException");
+    }
+
+    private static void throwRuntime2(){
+        throw new RuntimeException("runtimeException2");
     }
 
 }

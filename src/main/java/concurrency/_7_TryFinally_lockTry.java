@@ -21,7 +21,7 @@ public class _7_TryFinally_lockTry {
     public static final String EOF = "EOF";
 
     public static void main(String[] args) {
-        List<String> buffer = new ArrayList<String>();
+        List<String> buffer = new ArrayList<>();
         ReentrantLock bufferLock = new ReentrantLock();
         MyTryFinallyProducer producer = new MyTryFinallyProducer(buffer, ThreadColors.ANSI_BLUE, bufferLock);
         MyTryFinallyConsumer consumer1 = new MyTryFinallyConsumer(buffer, ThreadColors.ANSI_PURPLE, bufferLock);

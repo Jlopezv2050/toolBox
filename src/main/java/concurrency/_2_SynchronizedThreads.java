@@ -9,8 +9,6 @@ package concurrency;
  */
 public class _2_SynchronizedThreads {
 
-    private int sharedVariable;
-
     private class thread1 implements Runnable{
         @Override
         public void run() {
@@ -19,6 +17,7 @@ public class _2_SynchronizedThreads {
     }
 
     private synchronized void doCountDown() {
+        int sharedVariable;
         for (sharedVariable = 10 ; sharedVariable > 0; sharedVariable--){
             if (Thread.currentThread().getName().equals("Thread1")){
                 System.out.println(_1_Threads.ANSI_GREEN + "Thread 1, value: "+ sharedVariable);

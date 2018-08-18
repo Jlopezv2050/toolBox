@@ -1,8 +1,6 @@
 package concurrency;
 
-
 public class _1_b_AnotherThread implements Runnable{
-
     @Override
     public void run() {
         try {
@@ -12,6 +10,7 @@ public class _1_b_AnotherThread implements Runnable{
             //return to prevent continue with the run
             return;
         }
-        System.out.println(_1_Threads.ANSI_RED + "I've reached after try/catch");
+        System.out.println(_1_Threads.ANSI_BLACK + "I've reached after try/catch");
     }
+
 }

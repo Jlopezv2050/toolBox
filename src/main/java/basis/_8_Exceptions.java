@@ -8,8 +8,13 @@ import java.io.IOException;
 /**
  * "event that disrupts the normal program's flow"
  * <p>
- * LBYL
- * EAFP
+ *     Ways to dealing errors
+ * 1. LBYL (Look Before You Leap. ej. Test an object is not null before to attempt to use it)
+ * 2. EAFP (Easy to Ask for Forgiveness than Permission) ej. Perform the operation then respond the Exception
+ *
+ * 1. Read int from Scanner. LBYL foreach digit do Character.isDigit(). Better use try catch with mismatchException.
+ * 2. Check key in a Map. EAFP is too much code. Use LBYL (getOrDefault()) instead.
+ *
  */
 public class _8_Exceptions {
     int a = 1;
@@ -51,6 +56,8 @@ public class _8_Exceptions {
 
     // THROW EARLY CATCH LATE. Climb the stack trace until the level you reach enough abstraction to handle the problem.
 
+    // Each THREAD has its own call stack. Naming the thread is a good practice in order to identify in the 1st log line.
+
     public static void main(String[] args) {
         readFile();
         throwFromFinally();
@@ -74,15 +81,15 @@ public class _8_Exceptions {
     private static void readFile() {
         try (FileReader fr = new FileReader("\\tmp\\test.txt")) {
             char[] a = new char[50];
-            fr.read(a);
-            for (char c : a)
-                System.out.print(c);
+            if (fr.read(a)==1) {
+                for (char c : a) System.out.print(c);
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public static void avoidLostWrappingExceptions() throws _8_b_User_Defined_Exceptions {
+    private static void avoidLostWrappingExceptions() throws _8_b_User_Defined_Exceptions {
         File file = new File("noExist.txt");
         FileInputStream fileInputStream;
         try {
@@ -98,7 +105,7 @@ public class _8_Exceptions {
     private static void testMultipleException() {
         try {
             int[] a = {0, 1};
-            System.out.println("The value from the third position is: " + a[3]);
+            System.out.println("The value from the third position is: " + a[1]);
 
         } catch (ArithmeticException | IndexOutOfBoundsException e) {
             System.out.println("ERROR: " + e);
@@ -117,7 +124,6 @@ public class _8_Exceptions {
     private static void throwRuntime(){
         throw new RuntimeException("runtimeException");
     }
-
     private static void throwRuntime2(){
         throw new RuntimeException("runtimeException2");
     }

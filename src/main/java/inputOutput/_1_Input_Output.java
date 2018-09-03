@@ -1,4 +1,4 @@
-package basis;
+package inputOutput;
 
 import java.io.BufferedReader;
 import java.io.Console;
@@ -6,11 +6,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
-/**
- * Created by juan on 24/11/16.
- */
-public class _9_Input_Output {
-
+public class _1_Input_Output {
     /**
      * InputStreamReader
      *
@@ -20,7 +16,7 @@ public class _9_Input_Output {
      *     The wrapping code is hard to remember.
      * @return name
      */
-    private String readUsingInputStreamReader(){
+    private static String readUsingInputStreamReader(){
         String name = null;
         try {
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -44,8 +40,8 @@ public class _9_Input_Output {
      *      The reading methods are not synchronized.
      * @return nationality
      */
-    private String readUsingScanner(){
-        String nationality = null;
+    private static String readUsingScanner(){
+        String nationality;
 
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter your nationality: ");
@@ -66,9 +62,8 @@ public class _9_Input_Output {
      *      Does not work in non-interactive environment (such as in an IDE).
      * @return result
      */
-    private Map<String,String> readUsingConsole(){
-
-        Map result = new HashMap<String, String>();
+    private static Map<String,String> readUsingConsole(){
+        HashMap<String, String> result = new HashMap<>();
 
         Console console = System.console();
         if (console == null) {
@@ -88,4 +83,11 @@ public class _9_Input_Output {
 
         return result;
     }
+
+    public static void main(String[] args) {
+        System.out.println(readUsingInputStreamReader());
+        System.out.println(readUsingScanner());
+        System.out.println(readUsingConsole());
+    }
+
 }

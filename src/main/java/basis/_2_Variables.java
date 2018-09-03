@@ -51,6 +51,7 @@ public class _2_Variables {
 
     //class/static variable
       //stored in the static memory
+      //shared between all the instances
       //values can be assigned during the declaration or within the constructor
       //non-modifiable constant
       //constants in upper case

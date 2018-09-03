@@ -23,7 +23,7 @@ public class _4_Comparable_Comparator {
 
     //LAMBDA STYLE
     public static Comparator<ForexTransaction> BY_ROI = (ForexTransaction o1,ForexTransaction o2) -> o1.roiTransaction.compareTo(o2.roiTransaction);
-    
+
     class ForexTransaction implements Comparable<ForexTransaction>{
         private String name;
         private Double priceTransaction;

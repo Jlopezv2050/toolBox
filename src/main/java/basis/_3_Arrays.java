@@ -1,6 +1,10 @@
 package basis;
 
 public class _3_Arrays {
+
+    boolean[] booleanArray = new boolean[5];
+
+    //Anonymous array
     int[] intsArray = {1,2,45,45,6};
 
     public static int[] sortArray (int[] intsArray){

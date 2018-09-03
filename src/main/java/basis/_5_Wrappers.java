@@ -3,12 +3,16 @@ package basis;
 import java.awt.*;
 
 /**
- * Created by juan on 21/11/16.
+ * Primitive types --> value types.
+ * Array/String/Object --> reference types.
+ *
  * Java is pass-by-value.
    (OK, once again... with feeling.)
    Java is pass-by-value.
    For primitives, you pass a copy of the actual value.
    For references to objects, you pass a copy of the reference (the remote control).
+   An object (reference of a memory space) passed is a copy of the reference. If we do a new inside
+   the method, the external object won't change the reference.
  */
 public class _5_Wrappers {
 
@@ -71,10 +75,5 @@ public class _5_Wrappers {
             System.out.println("X: " + point1Custom.firstPoint.x + " Y:" + point1Custom.firstPoint.y);
             System.out.println("X: " + point2Custom.firstPoint.x + " Y: " + point2Custom.firstPoint.y);
 
-
-
         }
     }
-
-
-

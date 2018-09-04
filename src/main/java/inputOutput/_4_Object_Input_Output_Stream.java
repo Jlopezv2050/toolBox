@@ -48,6 +48,9 @@ public class _4_Object_Input_Output_Stream implements Map<Integer, Location> {
             for(Location location : locations.values()) {
                 locFile.writeObject(location);
             }
+
+            File fileToRemove = new File("locationsObject.dat");
+            if (!fileToRemove.delete()) throw new IOException("can not close");
         }
 
     }

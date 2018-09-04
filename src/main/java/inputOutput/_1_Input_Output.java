@@ -39,6 +39,8 @@ public class _1_Input_Output {
      *  Drawbacks:
      *      The reading methods are not synchronized.
      * @return nationality
+     *
+     * sout "Enter num" INTRO --> you have to do .nextLine() to skip this intro.
      */
     private static String readUsingScanner(){
         String nationality;
@@ -47,6 +49,7 @@ public class _1_Input_Output {
         System.out.print("Enter your nationality: ");
         nationality = scanner.nextLine();
         System.out.println("Your nationality is: " + nationality);
+        scanner.close();
 
         return nationality;
     }

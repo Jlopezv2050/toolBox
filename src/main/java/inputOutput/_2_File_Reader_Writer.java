@@ -13,13 +13,13 @@ import java.util.Scanner;
 /**
  * About exceptions, use tryWithResource (or multipleResource)
  */
-public class _2_Files {
+public class _2_File_Reader_Writer {
     private final static String FILE_NAME = "C:\\Temp\\input.txt";
     private final  static String OUTPUT_FILE_NAME = "C:\\Temp\\output.txt";
     private final static Charset ENCODING = StandardCharsets.UTF_8;
 
     public static void main(String... aArgs) throws IOException{
-        _2_Files text = new _2_Files();
+        _2_File_Reader_Writer text = new _2_File_Reader_Writer();
 
         //treat as a small file
         List<String> lines = text.readSmallTextFile(FILE_NAME);

@@ -3,7 +3,7 @@ package concurrency;
 import java.util.Random;
 
 /**
- * 1. Without wait, writer starts setting empty = false and the next for iteration get deadLocked.
+ * 1. Without wait, writer starts setting empty = false and the next for iteration get deadLocked because of the while (both reader writer).
  * 2. Wait ->  Causes the current thread to wait until another thread invokes the {@link java.lang.Object#notify()}.
  * 3. NotifyAll -> All threads are waiting for this lock release.
  * while instead if in wait -> interrupts and spurious wake ups are possible

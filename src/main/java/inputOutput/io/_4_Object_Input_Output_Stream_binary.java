@@ -1,4 +1,4 @@
-package inputOutput;
+package inputOutput.io;
 
 import java.io.*;
 import java.util.*;
@@ -11,7 +11,7 @@ import java.util.*;
  * is unique across the file when you read back you have 2 Bar instances.
  *
  * */
-public class _4_Object_Input_Output_Stream implements Map<Integer, Location> {
+public class _4_Object_Input_Output_Stream_binary implements Map<Integer, Location> {
     private static Map<Integer, Location> locations = new LinkedHashMap<>();
 
     // 1. This first four bytes will contain the number of locations (bytes 0-3)

@@ -18,6 +18,12 @@ import static concurrency._8_ExecutorServices.EOF;
  *
  * ArrayBlockingQueue --> thread safe FIFO
  *
+ * ArrayBlockingQueue vs LinkedBlockingQueue --> while ArrayBlockingQueue which is bounded, linkedBlockingQueue is optionally bounded.
+ * Another difference between the two is how elements are stored
+ * internally ArrayBlockingQueue uses array internally whereas LinkedBlockingQueue uses linked nodes.
+ *
+ * If you're just addint to the end of the list, an ArrayList is what you want.
+ *
  * http://winterbe.com/posts/2015/04/07/java8-concurrency-tutorial-thread-executor-examples/
  * https://looksok.wordpress.com/2015/12/19/asynchronous-producer-consumer-with-blockingqueue-in-java/
  *
@@ -27,17 +33,34 @@ public class _8_ExecutorServices {
 public static final String EOF = "EOF";
 
     public static void main(String[] args) {
-        ArrayBlockingQueue<String> buffer = new ArrayBlockingQueue<String>(6);
+        ArrayBlockingQueue<String> buffer = new ArrayBlockingQueue<>(3);
 
         ExecutorService executorService = Executors.newFixedThreadPool(5);
+
+
+        ThreadPoolExecutor threadPoolExecutor = (ThreadPoolExecutor) executorService;
+
 
         MyProducerArrayBlockingQueue producer = new MyProducerArrayBlockingQueue(buffer, ThreadColors.ANSI_BLUE);
         MyConsumerArrayBlockingQueue consumer1 = new MyConsumerArrayBlockingQueue(buffer, ThreadColors.ANSI_PURPLE);
         MyConsumerArrayBlockingQueue consumer2 = new MyConsumerArrayBlockingQueue(buffer, ThreadColors.ANSI_CYAN);
 
-        executorService.execute(producer);
-        executorService.execute(consumer1);
-        executorService.execute(consumer2);
+//        executorService.execute(producer);
+//        executorService.execute(consumer1);
+//        executorService.execute(consumer2);
+
+        boolean aux = true;
+        boolean colorBlue = true;
+        int i = 0;
+        while(aux){
+
+            executorService.execute(new MyConsumerTest(i, threadPoolExecutor.getActiveCount(), (i%2==0) ? 5000:10000, colorBlue ? ThreadColors.ANSI_BLUE: ThreadColors.ANSI_RED));
+
+            colorBlue= !colorBlue;
+
+            i++;
+            if(i==100) aux = false;
+        }
 
         Future<String> future = executorService.submit(new Callable<String>() {
             @Override
@@ -70,7 +93,7 @@ class MyProducerArrayBlockingQueue implements Runnable {
 
     public void run() {
         Random random = new Random();
-        String[] nums = { "1", "2", "3", "4", "5"};
+        String[] nums = { "1", "2", "3", "4", "5", "6", "7"};
 
         for(String num: nums) {
             try {
@@ -88,6 +111,31 @@ class MyProducerArrayBlockingQueue implements Runnable {
         try {
             buffer.put("EOF");
         } catch(InterruptedException e) {
+        }
+    }
+}
+
+class  MyConsumerTest implements Runnable {
+
+    int threadNum;
+    int activeThreads;
+    int timeExecutions;
+    String color;
+
+    public MyConsumerTest(int threadNum, int activeThreads, int timeExecution, String color){
+        this.threadNum = threadNum;
+        this.activeThreads = activeThreads;
+        this.timeExecutions = timeExecution;
+        this.color = color;
+    }
+
+    @Override
+    public void run() {
+        System.out.println(color +"done!"+threadNum +"activeThreads: "+activeThreads +"time"+timeExecutions);
+        try {
+            Thread.sleep(timeExecutions);
+        } catch (InterruptedException e) {
+
         }
     }
 }
@@ -113,11 +161,13 @@ class MyConsumerArrayBlockingQueue implements Runnable {
                     }
                     // check if there is an element
                     if (buffer.peek().equals(EOF)) {
+                        Thread.sleep(5000);
                         System.out.println(color + "Exiting");
                         break;
                     } else {
                         //take removing from the list
                         System.out.println(color + "Removed " + buffer.take());
+                        Thread.sleep(5000);
                     }
                 } catch (InterruptedException e) {
 

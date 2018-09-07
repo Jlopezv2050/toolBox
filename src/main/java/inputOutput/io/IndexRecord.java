@@ -1,4 +1,4 @@
-package inputOutput;
+package inputOutput.io;
 
 public class IndexRecord {
     private int startByte;

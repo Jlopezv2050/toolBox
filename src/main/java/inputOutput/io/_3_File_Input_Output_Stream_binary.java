@@ -1,4 +1,4 @@
-package inputOutput;
+package inputOutput.io;
 
 import java.io.*;
 import java.util.*;
@@ -7,7 +7,7 @@ import java.util.*;
  * FileInputStream is meant for reading streams of raw bytes such as image data. For reading streams of characters, consider using FileReader.
  *
  * */
-public class _3_File_Input_Output_Stream implements Map<Integer, Location> {
+public class _3_File_Input_Output_Stream_binary implements Map<Integer, Location> {
     private static Map<Integer, Location> locations = new LinkedHashMap<>();
 
     static {

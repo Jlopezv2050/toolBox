@@ -1,4 +1,4 @@
-package inputOutput;
+package inputOutput.io;
 
 import java.io.Serializable;
 import java.util.HashMap;

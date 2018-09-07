@@ -1,4 +1,4 @@
-package inputOutput;
+package inputOutput.io;
 
 import java.io.BufferedReader;
 import java.io.Console;

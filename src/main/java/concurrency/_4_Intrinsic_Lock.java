@@ -11,7 +11,7 @@ public class _4_Intrinsic_Lock {
     public static final String EOF = "EOF";
 
     public static void main(String[] args) {
-        List<String> buffer = new ArrayList<String>();
+        List<String> buffer = new ArrayList<>();
         MyProducer producer = new MyProducer(buffer, ThreadColors.ANSI_RED);
         MyConsumer consumer1 = new MyConsumer(buffer, ThreadColors.ANSI_PURPLE);
         MyConsumer consumer2 = new MyConsumer(buffer, ThreadColors.ANSI_CYAN);

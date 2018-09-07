@@ -26,15 +26,15 @@ package basis;
  * Non-Access Modifiers --> static, final, abstract, synchronized
  *
 
- *    byte : 8-bits. -128 y 127.
- *    short : 16-bits. -32768 y 32767.
- *    int : 32-bits. -2147483648 y 2147483647.
- *    long : 64-bits. -9_223_372_036_854_775_808L y 9_223_372_036_854_775_807L.
+ *    byte : 8-bits (1-byte). -128 y 127.
+ *    short : 16-bits (2-byte). -32768 y 32767.
+ *    int : 32-bits (4-byte). -2147483648 y 2147483647.
+ *    long : 64-bits (8-byte). -9_223_372_036_854_775_808L y 9_223_372_036_854_775_807L.
  *
- *    float :  32-bits.
- *    double : 64-bits.
+ *    float :  32-bits (4-byte).
+ *    double : 64-bits (8-byte).
  *
- *    char : 16-bits. Unicode.  '\u0000' / '\uffff' ( 0 a 65535 )
+ *    char : 16-bits (2-byte). Unicode.  '\u0000' / '\uffff' ( 0 a 65535 )
  *    boolean : true /false.
  *
  *    A method can have a variable with the same name than a class and win except using keyword this.

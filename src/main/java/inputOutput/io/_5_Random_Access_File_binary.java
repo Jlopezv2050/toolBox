@@ -1,4 +1,4 @@
-package inputOutput;
+package inputOutput.io;
 
 import java.io.*;
 import java.util.Collection;
@@ -16,7 +16,7 @@ import java.util.Set;
  *           and the record length for each record.
  *
  * */
-public class _5_Random_Access_File implements Map<Integer, Location> {
+public class _5_Random_Access_File_binary implements Map<Integer, Location> {
     private static Map<Integer, Location> locations = new LinkedHashMap<>();
     private static Map<Integer, IndexRecord> index = new LinkedHashMap<>();
     private static RandomAccessFile ra;

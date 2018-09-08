@@ -1,15 +1,11 @@
 package inputOutput.nio;
 
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
-import java.nio.file.FileSystems;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.StandardOpenOption;
-import java.util.List;
 
 /**
  *
@@ -17,20 +13,23 @@ import java.util.List;
  * BUFFER --> container for the block of data. Typed only hold one type of data. Can specify size.
  * SELECTORS --> allow a single thread to manage the I/O for multiple channels
  *
- * Except FileChannel, in NIO we use 1 channel instance to read/write.
+ * Except FileChannel , in NIO we use 1 channel instance to read/write. Channel instance is buffered,
+ * don't wrap it.
+ *
+ * NIO
  *
  * */
 public class _3_NIO_Read_Write{
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
 
         /**
          * READ & WRITE FILE TEXT (UNCOMMENT TO RUN AND COMENT WRITE BINARY FILE)
-         *
+         * We can get FileChannel from FileInputStream, FileOutputStream and RandomAcc4essFile
          * */
 //            FileInputStream file = new FileInputStream("data.txt");
 //            FileChannel channel = file.getChannel();
-
+//
 //        Path dataPath = FileSystems.getDefault().getPath("data.txt");
 //        try {
 //            Files.write(dataPath, "\nLine 5".getBytes("UTF-8"), StandardOpenOption.APPEND);
@@ -46,6 +45,10 @@ public class _3_NIO_Read_Write{
 
         /**
          * READ & WRITE BINARY FILE
+         * String builder is used too in order to write.
+         *
+         * in J 1.8 has been introduced the methods to read one line Lines.findFirst()
+         * and nth line .skip()
          *
          * */
         try(FileOutputStream binFile = new FileOutputStream("data.dat");

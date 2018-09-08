@@ -12,6 +12,12 @@ import java.util.Scanner;
 
 /**
  * About exceptions, use tryWithResource (or multipleResource)
+ *
+ * FileWriter an Stream is the same concept but the first have ane encoding associated
+ * new FileInputStream (dir, UTF-8)
+ *
+ * BufferReader has the readLIne (necessary reading line by line)
+ *
  */
 public class _2_File_Reader_Writer_character_stream {
     private final static String FILE_NAME = "C:\\Temp\\input.txt";
@@ -92,6 +98,13 @@ public class _2_File_Reader_Writer_character_stream {
 
 
     //Even is not necessary, you can use Scanner with FileReader
+    /**
+     *
+     * java.io.Reader --> java.io.InputStreamReader --> java.io.FileReader
+     *
+     * Convenience class for reading character files. The constructors of this class assume
+     * that the default character encoding and the default byte-buffer size are appropriate.
+     * To specify these values yourself, construct an InputStreamReader on a FileInputStream.*/
     private static void scannerFileReader(){
         Scanner scanner = null;
         try {

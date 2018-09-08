@@ -14,6 +14,8 @@ import java.util.*;
  * Won't block the thread. We can continue executing another things.
  * SOME DEVELOPERS HAVE SHOWN BLOCKING I/O IS OFTEN FASTER.
  *
+ * NIO only might be recomended on a large app using multiple threads
+ *
  * Here, don't work with character or binary, work with blocks with channels, buffers and selectors.
  *
  * You can use NIO to create java.io stream.

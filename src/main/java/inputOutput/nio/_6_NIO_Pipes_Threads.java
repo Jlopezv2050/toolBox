@@ -10,7 +10,7 @@ import java.nio.channels.Pipe;
  *  source channel (multiple can read)
  *
  * */
-public class _6_NIO_Pipes {
+public class _6_NIO_Pipes_Threads {
 
     public static void main(String[] args) {
 

@@ -112,11 +112,15 @@ public class _3_NIO_Read_Write{
 //                System.out.println("byte buffer = " + new String(outputBytes));
             }
 
+            //relative (to the current position)
+            //absolute (not relative to the current position)
+
             // Absolute read (cursor is not moved)
             intBuffer.flip();
             ByteBuffer intBuffer2 = ByteBuffer.allocate(Integer.BYTES*2);
 
             numBytesRead = channel.read(intBuffer2);
+            //instead of moving flipping the intBuffer like in the relative we use te getInt(position)
             System.out.println(intBuffer2.getInt(0));
             System.out.println(intBuffer2.getInt(4));
 

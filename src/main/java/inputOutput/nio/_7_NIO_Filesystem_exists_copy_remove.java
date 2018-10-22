@@ -13,13 +13,15 @@ import java.nio.file.Path;
  *    Doesn't provide metadata (permissions, owner, ...)
  *    Fails working with lots of data (ex. request of all the files in a directory)
  * */
-public class _7_NIO_Filesystem_exists_copy_file {
+public class _7_NIO_Filesystem_exists_copy_remove {
     public static void main(String[] args) {
         try {
             //using relative path (absolute will be "D:\\bla\bla"
             Path sourceFile = FileSystems.getDefault().getPath("src/main/java/inputOutput/nio/Examples", "file1.txt");
             Path copyFile = FileSystems.getDefault().getPath("src/main/java/inputOutput/nio/Examples", "file1copy.txt");
             Files.copy(sourceFile, copyFile);
+            //Files.copy(sourceFile, copyFile, StandardCopyOption.REPLACE_EXISTING);
+            //Files.move(fileToMove, destination);
         } catch(IOException e) {
             e.printStackTrace();
         }

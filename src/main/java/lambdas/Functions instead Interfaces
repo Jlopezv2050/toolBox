@@ -1,0 +1,29 @@
+A thread callback use an instance implementing Interface depending each image type
+
+public interface ResizeImage {
+    public Image resizeImage(Image image);
+}
+
+public List<Image> runWhenDone() {
+    for (Image image : images) {
+        resizedImages.add(resizer.resizeImage(image));
+    }
+}
+
+We can use instead a function:
+
+Function<Image, Image> resizer1 = (Image image) -> { resize using algorithm 1 }
+Function<Image, Image> resizer2 = (Image image) -> { resize using algorithm 2 }
+
+public List<Image> runWhenDone(Function<Image, Image> resizer)  {
+    for (Image image : images) {
+        resizedImages.add(resizer.apply(image));
+    }
+}
+
+YOU AVOID AN INTERFACE AND THE BUNCH OF CLASSES IMPLEMENTATIONS!
+
+POSIBLE APPLICATIONS:
+
+THREADS CALLBACKS
+OPTIMIZER MULTIPLE STEPS (WITH DIFFERENTS ALGORITHMS IN EACH STEP)

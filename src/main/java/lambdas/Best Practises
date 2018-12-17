@@ -1,0 +1,18 @@
+
+1. Specified the types of parameters vs. letting the compiler infer them
+
+2. Used a return statement with curly braces for one-statement lambda expressions vs.
+not using return because it's implied (and hence not requiring curly braces)
+
+3. Used lambda expressions that contains one statement vs. Lambda expressions that have
+more than one statement
+
+4. Using parenthesis when a lambda expression only has one argument vs. not using parenthesis
+since they're optional when there's only one argument
+
+
+The discussion comes from verbosity vs. conciseness coming down to the choice between readability
+and conciseness. Find the concise following:
+
+1. Will be readable to you and another programmers in some time?
+2. If you are writing in an existent code, don't change the way it is written.

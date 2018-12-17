@@ -18,10 +18,10 @@ public class Expressions {
         //        }).start();
 
 
-        Employee john = new Employee("John Doe");
-        Employee tim = new Employee("Tim Buchalka");
-        Employee jack = new Employee("Jack Hill");
-        Employee snow = new Employee("Snow White");
+        Employee john = new Employee("John Doe",0);
+        Employee tim = new Employee("Tim Buchalka",0);
+        Employee jack = new Employee("Jack Hill",0);
+        Employee snow = new Employee("Snow White",0);
 
         List<Employee> employees = new ArrayList<>();
         employees.add(john);
@@ -74,22 +74,6 @@ public class Expressions {
 
    static String doStringStuff(UpperConcat uc){
         return uc.upperAndConcat("String1", "String2");
-    }
-}
-
-class Employee {
-    private String name;
-
-    Employee(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 }
 

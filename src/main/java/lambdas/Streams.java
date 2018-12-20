@@ -91,7 +91,7 @@ public class Streams {
                 .flatMap(department -> department.getEmployees().stream())
                 .forEach(System.out::println);
 
-        //Collect -> store their contents at the end of the chain
+        //Collect -> store contents at the end of the chain
         System.out.println("---------------");
 //        List<String> sortedGNumbers = someBingoNumbers
 //                .stream()

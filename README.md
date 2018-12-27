@@ -9,6 +9,9 @@ Almost all classes are within a Java feature or section and has it's own main cl
 ### Prerequisites
 
 Up to now is only tested with intelliJ 18 Community.
+For database section you need docker installed. If you haven't installed yet I recommend:
+
+
 
 ```
 Give examples

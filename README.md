@@ -13,6 +13,7 @@ Up to now is only tested with intelliJ 18 Community.
 For database section you need docker and docker-compose installed. If you haven't installed yet I recommend:
 
 [Digital Ocean Community Docker Installation Tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04#step-1-%E2%80%94-installing-docker)
+
 [Digital Ocean Community DockerCompose Installation Tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-16-04)
 
 

@@ -32,4 +32,5 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
     compile group: 'org.json', name: 'json', version: '20170516'
+    compile group: 'org.postgresql', name: 'postgresql', version: '42.2.5'
 }

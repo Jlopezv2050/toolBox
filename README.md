@@ -18,7 +18,7 @@ For database section you need docker and docker-compose installed. If you haven'
 
 ### DataBase Section
 
-A step by step series of examples that tell you how to get a development env running
+In order to avoid the database instalation a docker with a PostgreSQL and PgAdmin has been attached.
 
 Up postgreSQL:
 
@@ -40,7 +40,6 @@ Access postgreSQL via [pgAdmin4](http://localhost:5050/browser/):
 
 ![](posgresqlDns.png)
 
-End with an example of getting some data out of the system or using it for a little demo
 
 ### Installing
 

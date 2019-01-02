@@ -38,7 +38,7 @@ postgres=# \dt
 ```
 Access postgreSQL via [pgAdmin4](http://localhost:5050/browser/):
 
-![](posgresqlDns.png)
+<img src="posgresqlDns.png" width="357" height="267">
 
 
 ### Installing

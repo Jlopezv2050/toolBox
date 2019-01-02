@@ -16,6 +16,30 @@ For database section you need docker and docker-compose installed. If you haven'
 
 [Digital Ocean Community DockerCompose Installation Tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-16-04)
 
+### DataBase Section
+
+A step by step series of examples that tell you how to get a development env running
+
+Up postgreSQL:
+
+```bash
+$ cd /pathToolBoxProject
+$ docker-compose up postgresql
+```
+Up pgAdmin:
+```bash
+$ cd /pathToolBoxProject
+$ docker-compose up pgAdmin
+```
+Access postgreSQL via plsql:
+```
+$ docker exe -it toolbox_postgresql_1 -U postgres
+postgres=# \dt
+```
+Access postgreSQL via [pgAdmin4](http://localhost:5050/browser/):
+
+
+End with an example of getting some data out of the system or using it for a little demo
 
 ### Installing
 
@@ -55,6 +79,8 @@ Explain what these tests test and why
 Give an example
 ```
 
+### 
+
 ## Deployment
 
 Add additional notes about how to deploy this on a live system
@@ -75,7 +101,7 @@ This version covers JDK.8 features.
 
 ## Authors
 
-* **JonLv** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **JonLv** -  [JonLvBlog](https://github.com/PurpleBooth)
 
 ## License
 

@@ -37,7 +37,7 @@ $ docker exe -it toolbox_postgresql_1 -U postgres
 postgres=# \dt
 ```
 Access postgreSQL via [pgAdmin4](http://localhost:5050/browser/):
-
+![](posgresqlDNS.png)
 
 End with an example of getting some data out of the system or using it for a little demo
 

@@ -1,0 +1,19 @@
+DATABASE SECTION
+
+For example in SQLite all the bbdd is stored in one file (ex. music.db)
+.schema to see the queries
+
+JDK database is derby and includes JavaDataBaseConnector (JDBC)
+
+Statement
+ResultSet
+
+while (result.next()) {
+    sout result.getString()
+}
+
+"A resultset can only have one associated statement"
+
+CLOSE result, statement and connection.
+
+

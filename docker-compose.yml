@@ -10,6 +10,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
+      - ./postgres-data:/var/lib/postgresql/data
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
 
   pgAdmin:
@@ -19,7 +20,9 @@ services:
     environment:
       PGADMIN_DEFAULT_EMAIL: user@domain.com
       PGADMIN_DEFAULT_PASSWORD: secret
-
+    volumes:
+      - ./pgAdmin-data:/var/lib/pgadmin
+      - ./servers.json:/pgadmin4/servers.json
 
 #docker run --name pgT -p 5432:5432 -e POSTGRES_PASSWORD=testing -d postgres:11-alpine
 #docker pull dpage/pgadmin4

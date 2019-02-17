@@ -16,4 +16,21 @@ while (result.next()) {
 
 CLOSE result, statement and connection.
 
+DDL -> (CREATE, ALTER, DROP) Definition
+DML -> (SELECT, INSERT, UPDATE, DELETE) Manipulation
+DCL -> (GRANT, INVOKE) Control
 
+Statement executeUpdate -> return num updated
+
+Statement.GENERATED_KEYS
+
+SQL INJECTION
+
+Ex. 1 WHERE name= name; DROP TABLE tablename; -- (this comment consumes the final quote)
+Ex. 2 WHERE name= juan" OR 1=1 "
+
+
+
+Validation checks if the input meets a set of criteria (such as a string contains no standalone single quotation marks).
+
+Sanitization modifies the input to ensure that it is valid (such as doubling single quotes).

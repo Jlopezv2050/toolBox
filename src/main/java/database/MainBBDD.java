@@ -2,6 +2,7 @@ package database;
 
 import database.model.Users;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class MainBBDD {
@@ -10,6 +11,7 @@ public class MainBBDD {
         UserDTO userDTO = new UserDTO(dataSource);
 
         try {
+            //RETRIEVE QUERY
             if (dataSource.open()){
                 List<Users> usersList = userDTO.queryUsers(1);
 
@@ -17,7 +19,11 @@ public class MainBBDD {
                     System.out.println(user);
                 }
             }
-        } catch (Exception e) {
+
+            //INSERT QUERY
+            userDTO.insertUser();
+
+        } catch (SQLException e) {
             System.out.println("Error: " + e);
         } finally {
             dataSource.close();

@@ -40,4 +40,47 @@ public class UserDTO  {
         }
         return usersList;
     }
+
+    void insertUser() {
+
+        try {
+            //TODO move into dataSource
+            dataSource.conn.setAutoCommit(false);
+
+            String sb = "INSERT INTO " + DataSource.TABLE_USERS +
+                    " (" +
+                    DataSource.COLUMN_USERS_ID.concat(", ") +
+                    DataSource.COLUMN_USERS_USERNAME.concat(", ") +
+                    DataSource.COLUMN_USERS_PASSWORD.concat(")") +
+                    " VALUES (10, \'Ines\', \'pwd\')";
+
+
+            int affectedRows = dataSource.executeUpdateQuery(sb);
+
+            if(affectedRows == 1) {
+                dataSource.conn.commit();
+            } else {
+                throw new SQLException("The song insert failed");
+            }
+
+        } catch(SQLException e) {
+            System.out.println("Insert song exception: " + e.getMessage());
+            try {
+                System.out.println("Performing rollback");
+                dataSource.conn.rollback();
+            } catch(SQLException e2) {
+                System.out.println("Oh boy! Things are really bad! " + e2.getMessage());
+            }
+        } finally {
+            try {
+                System.out.println("Resetting default commit behavior");
+                dataSource.conn.setAutoCommit(true);
+            } catch(SQLException e) {
+                System.out.println("Couldn't reset auto-commit! " + e.getMessage());
+            }
+
+        }
+    }
+
+
 }

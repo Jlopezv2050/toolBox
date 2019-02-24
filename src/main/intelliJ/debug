@@ -1,0 +1,24 @@
+Step Over (F8) -> statement by statement
+Step Into (F7) -> into the method except jdk or third party lib
+Force Step Into -> into the method forced
+Step out -> finish the method and return to the caller
+Drop frame -> rewind one frame except network bbdd an instance, static variable operation. Only local var.
+Run to the cursor -> you put the cursor and jump with no breakpoint
+Resume button -> useful to close connections (ex. bbdd, network, resources)
+
+WATCHERS (followed variables list)
+you can configure watches (right click -> add watcher (to avoid navigate in variables list.)
+
+BLUE VARIABLES (changed)
+
+FIELD WATCH POINT (break point to class fields)
+    * You can set click on class field left bar
+    * Remove once hit (once this field is reached, the breakpoint is disabled)
+    *You can follow access and modification
+
+SMART STEP INTO
+Run -> smart -> select method  (if you have chain method calls, select where you can jump)
+
+SET VALUE TO VARIABLE LIST
+you can change the value of a var while you're debugging
+

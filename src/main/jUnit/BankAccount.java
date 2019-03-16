@@ -1,55 +1,54 @@
-package basis;
 
-/**
- * <h1>Classes, Constructors and Objects</h1>
- * Short description
- * <p>
- * <ul>
- *     <li><b>Class:</b> template with properties, behaviours (methods), external interactions and how an specimen of this is created.</li>
- *     <li><b>Object:</b> specific instance of the class (have state and behaviour).</li>
- * </ul>
- * <p>
- * <b>Note:</b> There can be only one public class per source file and multiple non-public classes.
- * The public class name should be the name of the source file.
- *
- * @author  jlopezv
- * @version 1.0
- * @since   2016
- */
+public class BankAccount {
 
-public class _1_Classes {
+    private String firstName;
+    private String lastName;
+    private double balance;
 
-    String name;
-    long id;
-    String type;
+    public static final int CHECKING = 1;
+    public static final int SAVINGS = 2;
 
-    //CONSTRUCTOR
-    _1_Classes(String name, long id, String type) {
-        this.name = name;
-        this.id = id;
-        this.type = type;
+    private int accountType;
+
+    public BankAccount(String firstName, String lastName, double balance, int typeOfAccount) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.balance = balance;
+        this.accountType = typeOfAccount;
     }
 
-    //this block will be executed when the class will be instanced.
-    {
-        System.out.println("_1_Classes non-statical loading.");
+    // The branch argument is true if the customer is performing the transaction
+    // at a branch, with a teller.
+    // It's false if the customer is performing the transaction at an ATM
+    public double deposit(double amount, boolean branch) {
+        balance += amount;
+        return balance;
     }
 
-    //this block will be executed when the class will be loaded in memory.
-    static {
-        System.out.println("_1_Classes statical loading.");
+    // The branch argument is true if the customer is performing the transaction
+    // at a branch, with a teller.
+    // It's false if the customer is performing the transaction at an ATM
+    public double withdraw(double amount, boolean branch) {
+        if ((amount > 500.00) & !branch) {
+            throw new IllegalArgumentException();
+        }
+
+        balance -= amount;
+        return balance;
     }
 
-    //GETTERS AND SETTERS
-    public String getName() {
-        return name;
+    public double getBalance() {
+        return balance;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public boolean isChecking() {
+        return accountType == CHECKING;
     }
 
-    public void actionToInheritance() {
-        System.out.println("action to inheritance");
+    // More methods that use firstName, lastName, and perform other functions
+
+    public static void main(String[] args) {
+        BankAccount bankAccount = new BankAccount("juan","",0.1D, 1);
+        System.out.println(bankAccount.getBalance());
     }
 }

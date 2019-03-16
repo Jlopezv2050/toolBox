@@ -1,0 +1,11 @@
+The old method (of JUnit 3) was to mark the test-classes by extending junit.framework.TestCase.
+That inherited junit.framework.Assert itself and your test class gained the ability to call the assert methods this way.
+
+Since version 4 of JUnit, the framework uses Annotations for marking tests. So you no longer need to extend TestCase.
+But that means, the assert methods aren't available. But you can make a static import of the new Assert class.
+That's why all the assert methods in the new class are static methods. So you can import it this way:
+
+import static org.junit.Assert.*;
+After this static import, you can use this methods without prefix.
+
+At the redesign they also moved to the new package org.junit that follows better the normal conventions for package naming.

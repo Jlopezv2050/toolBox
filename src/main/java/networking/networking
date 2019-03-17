@@ -1,0 +1,46 @@
+Terms
+----------------------------------
+Client
+Server
+Host
+
+Could Client and server be at the same host? YES! (ex. MySQL and Workbench client)
+
+TCP/IP stack
+--------------------------------
+                                    LAYER             | PROTOCOL
+                                    ---------------------------------------------
+Java high level network package --> Application Layer | HTTP, SSH, SMTP, DNS,...
+Java low level network package --->    (socket)       |
+                                    ---------------------------------------------
+                                    Transport Layer   | TCP, UDP
+                                    ---------------------------------------------
+                                    Network Layer     | iPv4/iPv6
+
+¿How data arrived from physical connection is routed to the app target? PORTS
+
+Handshaking -> connection between client/server
+Packets -> format of sent data
+
+JAVA NET PACKAGE
+---------------------------
+High or level api you have or not to concern about network concepts or you are more abstracted.
+
+Socket -> end point 2 way-connection. Client server have its own. Multiple clients connects the same server
+and port but with its own socket.
+
+Client socket instance is Socket and server is ServerSocket.
+
+UDP (User Datagram Protocol)
+-----------------------------------------------------------
+When use TCP some handshaking has to be between server/client. Connect client to server and accept. Reliable but affect performance
+UDP could or not be a server and don't send any response to message sender. So you don't need reliable connection or two-way
+connexion or speed is essential.
+Uses datagram (self-contained message) and it's not guaranteed to arrive at its destination.
+In time-sensitive communication like voIP, skype is used.
+
+
+CONCLUSION
+TCP is more reliable because create server/client end-to-end connection. However this handshaking affects the performance
+and in case server UDP has to answer client has to get the info from the Packet because datagram (UDP packet) is self contained:
+data + address + port number.

@@ -44,3 +44,36 @@ CONCLUSION
 TCP is more reliable because create server/client end-to-end connection. However this handshaking affects the performance
 and in case server UDP has to answer client has to get the info from the Packet because datagram (UDP packet) is self contained:
 data + address + port number.
+
+HIGH-LEVEL JAVA NETWORKING API
+
+w3c -> the www consoritum web standars:
+
+URI -> is an identifier that might not provide enough information to access the resource it identifies.
+(can be relative path)
+
+URL -> is an identifier that includes information about how to access the resource it identifies.
+(have to be absolute path)
+
+RECOMMENDED practise is to use URI until you want to access a resource then convert to URL
+
+So http URI is an URL (absolute URI)
+
+generic form:
+scheme:[//[user[:password]@]host[:port]][/path][?query][#fragment]
+
+¡¡Remember URI hasn't to be valid until you actually acceed it!!
+
+RECOMMENDED practise:
+
+URI baseUri = new URI "http://user:pwwd@server.com";
+URI uri = new URI "/catalogue.phones?os=android#samsung";
+URI resolvedURI = baseUri.resolve(uri)
+
+
+URLConnectionClass
+URLConnection urlConnection = url.openConnection();
+//make configurations
+ex.
+urlConnection.setDoOutput(true);
+urlConnection.connect();

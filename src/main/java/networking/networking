@@ -77,3 +77,23 @@ URLConnection urlConnection = url.openConnection();
 ex.
 urlConnection.setDoOutput(true);
 urlConnection.connect();
+
+HTTPURLCONNECTION
+Can write on JAR
+w3c protocols ->  GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+
+java.net package has been from 1.0 and it hasn't change much. Under cover uses http1.0 instead
+http2.0
+
+Classes that use the newer HTTP/2.0 protocol were proposed and worked on for J9 and the proposal listed the following problems with the current API:
+The base URLConnection API was designed with multiple protocols in mind, nearly all of which are now defunct (ftp, gopher,...)
+The API predates HTTP/1.1 and is too abstract
+It is hard to use, with many undocumented behaviors
+It works in blocking mode only (i.e. one thread per request/response)
+It is very hard to maintain
+
+.com?tag=value&param2=value
+
+
+
+

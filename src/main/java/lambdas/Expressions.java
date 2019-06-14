@@ -29,7 +29,6 @@ public class Expressions {
         employees.add(jack);
         employees.add(snow);
 
-        //lambda thread is using employee (new variable each loop) NO employees, so final
         for(Employee employee: employees){
             new Thread(()-> System.out.println(employee.getName()));
         }

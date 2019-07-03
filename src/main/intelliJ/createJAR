@@ -1,0 +1,6 @@
+File -> ProjectStructure -> Artifact -> + -> From modules
+MainClass(non executable)
+Build -> Build Artifacts -> build
+
+Import the created JAR
+Project Structure -> libraries

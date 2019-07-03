@@ -16,6 +16,8 @@ public class _7_Methods_Constructors {
     public _7_Methods_Constructors(int a) {
         this();
         this.a = a;
+        //you can use a final variable in constructor
+        final int b = 1;
         System.out.println("Customized Constructor");
     }
 

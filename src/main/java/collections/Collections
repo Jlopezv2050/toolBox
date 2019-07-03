@@ -1,0 +1,40 @@
+           ORDER         DUPLICATES
+LIST         V               V
+SET          X               X
+
+Map you can't retrieve ex. 10th element
+Map/set can't be element of itself
+Set is a saved as a key in a dummy HashMap
+
+Sets
+-----------------------------------------
+Sets UNION/INTERSECTION
+S1 1,2,3        S2 3,4,5
+
+addAll 1,2,3,4,5        retainAll 3      removeAll 1,2,4,5
+
+Example. Set from list
+String [] a = "The fox is on the news".split(" ")
+set.addAll(Arrays.asList(a)
+
+Maps
+-------------------------------------
+As a Key you can use an inmutable class
+map.getOrDefault(Key,item) if ! key use default
+Collections.unmodifiableMap(map) --> the objects inside this collections are not affect by the "unmodifiable")
+
+If you want insertion order LINKED HASH MAP/SET
+If you want sorted version TREE MAP/HASH
+
+
+PECS
+
+Providers extend consumer super
+
+How to understand "the comic". Energy sources are classes
+
+Consumers are (<? super Vegetable>)
+So if you want to burn some Vegetables, pass a consumer
+
+Providers doesn't allow to write in the list, so are the src when,
+you, for example copy a list

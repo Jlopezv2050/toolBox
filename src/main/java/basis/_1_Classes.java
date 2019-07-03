@@ -17,17 +17,19 @@ package basis;
  * @since   2016
  */
 
-public class _1_Classes {
+// class could be public -> all packages could see
+// class could be default-package -> only its package could see
+// protected is not allowed because is like default-package plus subpackages (not exist)
+// private make no sense because package can't use classes so can't instantiate it
 
-    String name;
-    long id;
-    String type;
+// final can no be subclassed
+class _1_Classes {
+
+    private String name;
 
     //CONSTRUCTOR
-    _1_Classes(String name, long id, String type) {
+    _1_Classes(String name) {
         this.name = name;
-        this.id = id;
-        this.type = type;
     }
 
     //this block will be executed when the class will be instanced.
@@ -52,4 +54,14 @@ public class _1_Classes {
     public void actionToInheritance() {
         System.out.println("action to inheritance");
     }
+
+    //WRONG!! you're overloading (change the passed parameters) instead overriding
+    public boolean equals(_1_Classes object){
+        return this == object;
+    }
+
+    //PROBLEM EQUALS WHEN SUBCLASSING
+    //Dog d1   Labrador d2
+    //d1.equals(d2)-> d1 instanceOf d2 -> false! (ok!)
+    //d2.equals(d1)-> d2 instanceOf d1 -> true! (ko!)
 }

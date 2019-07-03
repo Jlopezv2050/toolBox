@@ -1,10 +1,12 @@
 package generics;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
  * <T extends List> says that the class has available a generic type that extends from list.
- * Comparable <GenericClass<T>> we are using T for first time.
+ * when you say class<T> you're saying T is "available"
+ * public int compareTo(GenericClass<T>)
  * */
 public class GenericClass <T extends List> implements Comparable <GenericClass<T>> {
 

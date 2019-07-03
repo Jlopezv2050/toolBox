@@ -10,7 +10,16 @@ import java.util.ArrayList;
  *
  * <b>Note: you can't implement an interface in another interface. You can extend</b>
  */
-public class _16_Interfaces {
+class _16_Interfaces {
+
+    int CONSTANT = 100; //public static final (by default)
+
+    //is public by default
+    void B(){
+        System.out.println("default");
+    }
+
+
 
     static void saveInterface (ISaveable iSaveable, ArrayList<Integer> objectsList){
         iSaveable.populateObjectsFieldsFromArrayList(objectsList);

@@ -25,6 +25,8 @@ package basis;
  * Access control Modifiers --> private, public, protected
  * Non-Access Modifiers --> static, final, abstract, synchronized
  *
+ * members can be public,protected(package is subclass package), package, private
+ *
 
  *    byte : 8-bits (1-byte). -128 y 127.
  *    short : 16-bits (2-byte). -32768 y 32767.

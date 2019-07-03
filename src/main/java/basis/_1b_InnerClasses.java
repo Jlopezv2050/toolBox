@@ -60,7 +60,8 @@ public class _1b_InnerClasses {
         }
     }
 
-    /*2 Static inner class*/
+    /*2 Static inner class
+    * An static class is "shared" by all the outher class (_1b_InnerClass) instances*/
     private static class PrivateStaticInnerClass {
         private int number = 3;
 

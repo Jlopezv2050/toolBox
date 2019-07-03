@@ -1,0 +1,5 @@
+1. You have a private attribute, you return through a getter. Instead of return
+directly, do a new instance (wont't be the same reference or return an string)
+2. Make fields private and final. Prevent even getters or changes through the class.
+3. In the constructor use new for the fields which has been passed "with the reference". With
+this even the variable passed to fill the constructor will be changed, your instance wont be modified.
